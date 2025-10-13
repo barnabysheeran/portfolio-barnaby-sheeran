@@ -14,7 +14,7 @@ export default class ContentController {
     // Create a simple cube
     const geometry = new BoxGeometry(10, 10, 10);
     const material = new MeshBasicMaterial({
-      color: 0x00ff00,
+      color: 0xffffff,
       wireframe: true,
     });
     this.#CUBE = new Mesh(geometry, material);
