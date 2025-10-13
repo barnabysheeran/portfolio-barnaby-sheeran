@@ -20,6 +20,8 @@ export class BackgroundController {
 
   #applicationRunTimeMS: number = 0;
 
+  #animationFrameId: number | null = null;
+
   // ___________________________________________________________________________
 
   constructor(canvas: HTMLCanvasElement) {
@@ -38,10 +40,15 @@ export class BackgroundController {
 
     // Start Main Loop
     this.#applicationRunTimeMS = performance.now();
-    requestAnimationFrame(this.#tick.bind(this));
+    this.#animationFrameId = requestAnimationFrame(this.#loop);
   }
 
   // ______________________________________________________________________ Tick
+
+  #loop = (time: number) => {
+    this.#tick(time);
+    this.#animationFrameId = requestAnimationFrame(this.#loop);
+  };
 
   #tick(applicationRunTimeMS: number): void {
     // Calculate Frame Delta MS
@@ -68,9 +75,6 @@ export class BackgroundController {
       this.#SCENE,
       this.#CAMERA_CONTROLLER.getPerspectiveCamera(),
     );
-
-    // Request Next Frame
-    requestAnimationFrame(this.#tick.bind(this));
   }
 
   // ______________________________________________________________________ Size
@@ -89,6 +93,10 @@ export class BackgroundController {
   // ___________________________________________________________________ Destroy
 
   destroy(): void {
+    if (this.#animationFrameId !== null) {
+      cancelAnimationFrame(this.#animationFrameId);
+      this.#animationFrameId = null;
+    }
     // Destroy Controllers
     this.#CONTENT_CONTROLLER.destroy();
     this.#LIGHT_CONTROLLER.destroy();
