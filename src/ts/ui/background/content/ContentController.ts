@@ -15,6 +15,7 @@ export default class ContentController {
     const geometry = new BoxGeometry(1, 1, 1);
     const material = new MeshBasicMaterial({
       color: 0x00ff00,
+      wireframe: true,
     });
     this.#CUBE = new Mesh(geometry, material);
     this.#SCENE.add(this.#CUBE);
