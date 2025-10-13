@@ -12,7 +12,6 @@
   background-color: #fff;
 
   min-height: 100vh;
-  height: 100%;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -27,13 +26,14 @@ body {
   box-sizing: border-box;
 
   min-height: 100vh;
-  height: 100%;
   
   user-select: none;
   -webkit-user-drag: none;
+
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #root {
   min-height: 100vh;
-  height: 100vh;
 }
