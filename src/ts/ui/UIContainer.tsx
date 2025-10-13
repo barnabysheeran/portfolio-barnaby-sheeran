@@ -14,7 +14,7 @@ export default function UIContainer() {
       UI Container
       <SiteHeader />
       {projects.map((project) => (
-        <SiteProject key={project.id} project={project} />
+        <SiteProject key={project.id} projectData={project} />
       ))}
       <SiteFooter />
     </div>
