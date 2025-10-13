@@ -15,8 +15,10 @@ export class BackgroundController {
   #CAMERA_CONTROLLER: CameraController;
   #RENDER_CONTROLLER: RenderController;
 
+  #width: number = 0;
+  #height: number = 0;
+
   #applicationRunTimeMS: number = 0;
-  #animationFrameId: number | null = null;
 
   // ___________________________________________________________________________
 
@@ -36,7 +38,7 @@ export class BackgroundController {
 
     // Start Main Loop
     this.#applicationRunTimeMS = performance.now();
-    this.#animationFrameId = requestAnimationFrame(this.#tick.bind(this));
+    requestAnimationFrame(this.#tick.bind(this));
   }
 
   // ______________________________________________________________________ Tick
@@ -48,10 +50,18 @@ export class BackgroundController {
     // Store
     this.#applicationRunTimeMS = applicationRunTimeMS;
 
+    // Resized ?
+    if (
+      this.#width !== this.#CANVAS.clientWidth ||
+      this.#height !== this.#CANVAS.clientHeight
+    ) {
+      this.#setSize(this.#CANVAS.clientWidth, this.#CANVAS.clientHeight);
+    }
+
     // Tick Controllers - Order Important - Render Last
     this.#CONTENT_CONTROLLER.tick(FRAME_DELTA_MS);
-    this.#LIGHT_CONTROLLER.tick(FRAME_DELTA_MS);
-    this.#CAMERA_CONTROLLER.tick(FRAME_DELTA_MS);
+    // this.#LIGHT_CONTROLLER.tick(FRAME_DELTA_MS);
+    // this.#CAMERA_CONTROLLER.tick(FRAME_DELTA_MS);
 
     // Render
     this.#RENDER_CONTROLLER.render(
@@ -60,12 +70,29 @@ export class BackgroundController {
     );
 
     // Request Next Frame
-    this.#animationFrameId = requestAnimationFrame(this.#tick.bind(this));
+    requestAnimationFrame(this.#tick.bind(this));
+  }
+
+  // ______________________________________________________________________ Size
+
+  #setSize(width: number, height: number): void {
+    console.log('BackgroundController. setSize', width, height);
+
+    // Renderer
+    this.#RENDER_CONTROLLER.setSize(width, height);
+
+    // Store
+    this.#width = width;
+    this.#height = height;
   }
 
   // ___________________________________________________________________ Destroy
 
   destroy(): void {
-    // TODO
+    // Destroy Controllers
+    this.#CONTENT_CONTROLLER.destroy();
+    this.#LIGHT_CONTROLLER.destroy();
+    this.#CAMERA_CONTROLLER.destroy();
+    this.#RENDER_CONTROLLER.destroy();
   }
 }

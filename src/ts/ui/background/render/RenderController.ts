@@ -1,4 +1,4 @@
-import { Scene, WebGLRenderer } from 'three';
+import { Scene, WebGLRenderer, PerspectiveCamera } from 'three';
 
 export default class RenderController {
   #WEBGL_RENDERER: WebGLRenderer;
@@ -12,14 +12,21 @@ export default class RenderController {
       antialias: true,
       alpha: true,
     });
-    this.#WEBGL_RENDERER.setSize(window.innerWidth, window.innerHeight);
+
+    // Set Pixel Ratio
     this.#WEBGL_RENDERER.setPixelRatio(window.devicePixelRatio);
   }
 
   // ______________________________________________________________________ Tick
 
-  render(scene: Scene, camera: Camera): void {
+  render(scene: Scene, camera: PerspectiveCamera): void {
     this.#WEBGL_RENDERER.render(scene, camera);
+  }
+
+  // ______________________________________________________________________ Size
+
+  setSize(width: number, height: number): void {
+    this.#WEBGL_RENDERER.setSize(width, height, false);
   }
 
   // ___________________________________________________________________ Destroy

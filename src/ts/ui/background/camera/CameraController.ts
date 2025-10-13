@@ -24,7 +24,7 @@ export default class CameraController {
 
   // ______________________________________________________________________ Tick
 
-  tick(frameDeltaMS: number): void {}
+  // tick(frameDeltaMS: number): void {}
 
   // ____________________________________________________________________ Access
 

@@ -1,18 +1,20 @@
-import { Scene } from 'three';
+import { Scene, AmbientLight } from 'three';
 
 export default class LightController {
-  #SCENE: Scene;
+  #AMBIENT_LIGHT: AmbientLight;
 
   // ___________________________________________________________________________
 
   constructor(scene: Scene) {
-    // Store
-    this.#SCENE = scene;
+    // Create Ambient Light
+    this.#AMBIENT_LIGHT = new AmbientLight(0xffffff, 1);
+
+    scene.add(this.#AMBIENT_LIGHT);
   }
 
   // ______________________________________________________________________ Tick
 
-  tick(frameDeltaMS: number): void {}
+  // tick(frameDeltaMS: number): void {}
 
   // ___________________________________________________________________ Destroy
 

@@ -1,6 +1,6 @@
 ### Portfolio Barnaby Sheeran
 
-Vite - Typescript - CSS Modules - React - Zustand - WebGL  
+Vite - Typescript - CSS Modules - React - Zustand - Three - WebGL  
   
 Work in Progress  
 
