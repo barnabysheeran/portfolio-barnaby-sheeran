@@ -1,0 +1,17 @@
+.ui-container {
+  width: 100%;
+  max-width: var(--bp-desktop);
+  height: 100%;
+
+  box-sizing: border-box;
+
+  margin: 0 auto;
+  padding-left: var(--ui-container-padding);
+  padding-right: var(--ui-container-padding);
+
+  border-radius: var(--ui-border-radius);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

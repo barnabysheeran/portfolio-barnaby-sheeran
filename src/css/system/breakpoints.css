@@ -1,0 +1,50 @@
+:root {
+  /* Breakpoints for media queries */
+  --bp-mobile: 30rem;        /* 480px */
+  --bp-tablet: 48rem;        /* 768px */
+  --bp-laptop: 64rem;        /* 1024px */
+  --bp-desktop: 80rem;       /* 1280px */
+  --bp-wide: 96rem;          /* 1536px */
+
+  /* UI Container */
+  --ui-container-padding: calc(var(--grid-cell-width) * 2);
+
+  /* Border Radius */
+  --ui-border-radius: 0.5rem; /* 8px */
+}
+
+/* ___________________________________________________________________ Tablet */
+
+@media (min-width: 48rem) {
+  :root {
+    /* UI Container */
+    --ui-container-padding: calc(var(--grid-cell-width) * 4);
+  }
+}
+
+/* ___________________________________________________________________ Laptop */
+
+@media (min-width: 64rem) {
+  :root {
+    /* UI Container */
+    --ui-container-padding: calc(var(--grid-cell-width) * 4);
+  }
+}
+
+/* __________________________________________________________________ Desktop */
+
+@media (min-width: 80rem) {
+  :root {
+    /* UI Container */
+    --ui-container-padding: 0;
+  }
+}
+
+/* _____________________________________________________________________ Wide */
+
+@media (min-width: 96rem) {
+  :root {
+    /* UI Container */
+    --ui-container-padding: 0;
+  }
+}

@@ -1,0 +1,66 @@
+:root {
+  --color-white: rgba(255, 255, 255, 1);
+  --color-grey: rgba(128, 128, 128, 1);
+  --color-black: rgba(0, 0, 0, 1);
+
+  --color-text: rgba(255, 255, 255, 0.87);
+
+  --color-black-low: rgba(0, 0, 0, 0.25);
+  --color-black-mid: rgba(0, 0, 0, 0.5);
+  --color-black-high: rgba(0, 0, 0, 0.75);
+  --color-black-full: rgba(0, 0, 0, 1);
+
+  --color-red-low: rgba(128, 0, 0, 0.25);
+  --color-red-mid: rgba(128, 0, 0, 0.5);
+  --color-red-high: rgba(128, 0, 0, 0.75);
+  --color-red-full: rgba(128, 0, 0, 1);
+
+  --color-green-low: rgba(0, 128, 0, 0.25);
+  --color-green-mid: rgba(0, 128, 0, 0.5);
+  --color-green-high: rgba(0, 128, 0, 0.75);
+  --color-green-full: rgba(0, 128, 0, 1);
+
+  --color-blue-low: rgba(0, 0, 128, 0.25);
+  --color-blue-mid: rgba(0, 0, 128, 0.5);
+  --color-blue-high: rgba(0, 0, 128, 0.75);
+  --color-blue-full: rgba(0, 0, 128, 1);
+
+  /* Default Theme Properties - See uiStore for default */
+  --theme-background: var(--color-red-low);
+  --theme-surface-low: var(--color-red-low);
+  --theme-surface-mid: var(--color-red-mid);
+  --theme-surface-high: var(--color-red-high);
+  --theme-surface-full: var(--color-red-full);
+}
+
+.theme-red {
+  --theme-background: var(--color-red-low);
+  --theme-surface-low: var(--color-red-low);
+  --theme-surface-mid: var(--color-red-mid);
+  --theme-surface-high: var(--color-red-high);
+  --theme-surface-full: var(--color-red-full);
+}
+
+.theme-green {
+  --theme-background: var(--color-green-low);
+  --theme-surface-low: var(--color-green-low);
+  --theme-surface-mid: var(--color-green-mid);
+  --theme-surface-high: var(--color-green-high);
+  --theme-surface-full: var(--color-green-full);
+}
+
+.theme-blue {
+  --theme-background: var(--color-blue-low);
+  --theme-surface-low: var(--color-blue-low);
+  --theme-surface-mid: var(--color-blue-mid);
+  --theme-surface-high: var(--color-blue-high);
+  --theme-surface-full: var(--color-blue-full);
+}
+
+.theme-black {
+  --theme-background: var(--color-black-low);
+  --theme-surface-low: var(--color-black-low);
+  --theme-surface-mid: var(--color-black-mid);
+  --theme-surface-high: var(--color-black-high);
+  --theme-surface-full: var(--color-black-full);
+}
