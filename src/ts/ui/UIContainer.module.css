@@ -1,4 +1,6 @@
 .ui-container {
+  position: relative;
+
   width: 100%;
   max-width: var(--bp-desktop);
 
@@ -7,4 +9,6 @@
   margin: 0 auto;
   padding-left: var(--ui-container-padding);
   padding-right: var(--ui-container-padding);
+
+  z-index: var(--z-ui);
 }

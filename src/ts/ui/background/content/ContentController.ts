@@ -12,7 +12,7 @@ export default class ContentController {
     this.#SCENE = scene;
 
     // Create a simple cube
-    const geometry = new BoxGeometry(1, 1, 1);
+    const geometry = new BoxGeometry(10, 10, 10);
     const material = new MeshBasicMaterial({
       color: 0x00ff00,
       wireframe: true,

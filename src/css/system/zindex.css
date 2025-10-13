@@ -1,0 +1,7 @@
+:root {
+  --z-background: 100;
+  --z-ui: 200;
+  --z-overlay: 300;
+  --z-modal: 1000;
+  --z-tooltip: 1001;
+}
