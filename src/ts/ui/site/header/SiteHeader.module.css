@@ -1,1 +1,5 @@
-.site-header {}
+.site-header {
+    height: 10rem;
+    width: 100%;
+    background-color: var(--color-background);
+}

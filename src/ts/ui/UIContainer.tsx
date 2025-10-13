@@ -11,7 +11,6 @@ export default function UIContainer() {
 
   return (
     <div className={`${styles['ui-container']}`}>
-      UI Container
       <SiteHeader />
       {projects.map((project) => (
         <SiteProject key={project.id} projectData={project} />
