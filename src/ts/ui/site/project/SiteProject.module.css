@@ -5,6 +5,5 @@
     backdrop-filter: blur(1rem);
     -webkit-backdrop-filter: blur(1rem);
 
-    border-radius: 1rem;
-    padding: 1.5rem;
+    border-radius: var(--border-radius-large);
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import styles from './MediaViewer.module.css';
 
 interface MediaItem {
