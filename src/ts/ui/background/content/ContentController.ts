@@ -12,7 +12,7 @@ export default class ContentController {
     this.#SCENE = scene;
 
     // Create a simple cube
-    const geometry = new BoxGeometry(10, 10, 10);
+    const geometry = new BoxGeometry(1, 1, 1);
     const material = new MeshBasicMaterial({
       color: 0xffffff,
       wireframe: true,
@@ -25,8 +25,8 @@ export default class ContentController {
 
   tick(frameDeltaMS: number): void {
     // Rotate cube
-    this.#CUBE.rotation.x += 0.001 * frameDeltaMS;
-    this.#CUBE.rotation.y += 0.001 * frameDeltaMS;
+    this.#CUBE.rotation.x += 0.00001 * frameDeltaMS;
+    this.#CUBE.rotation.y += 0.00001 * frameDeltaMS;
   }
 
   // ___________________________________________________________________ Destroy
