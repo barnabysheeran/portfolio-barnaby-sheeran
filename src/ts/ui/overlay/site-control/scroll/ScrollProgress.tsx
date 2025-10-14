@@ -12,8 +12,8 @@ export default function ScrollProgress() {
   const animatorRef = useRef<ScrollProgressAnimator | null>(null);
 
   // Ring dimensions in pixels
-  const ringSize = 100;
-  const ringRadius = 45;
+  const ringSize = 50;
+  const ringRadius = 20;
   const strokeWidth = 4;
 
   const circumference = 2 * Math.PI * ringRadius;
