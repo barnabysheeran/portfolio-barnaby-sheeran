@@ -1,24 +1,15 @@
-import { useUIStateStore } from '../../store/uiState/uiStateStore';
-
-import ButtonTheme from '../component/button/theme/ButtonTheme';
+import ScrollProgress from './scroll/ScrollProgress';
+import ThemeSwitcher from './theme/ThemeSwitcher';
 
 import styles from './UIOverlay.module.css';
 
 export default function UIOverlay() {
-  const { theme, setTheme } = useUIStateStore();
+  // ____________________________________________________________________ Render
 
   return (
     <div className={styles['ui-overlay']}>
-      <ButtonTheme
-        theme="light"
-        isActive={theme === 'light'}
-        onClick={() => setTheme('light')}
-      />
-      <ButtonTheme
-        theme="dark"
-        isActive={theme === 'dark'}
-        onClick={() => setTheme('dark')}
-      />
+      <ScrollProgress />
+      <ThemeSwitcher />
     </div>
   );
 }
