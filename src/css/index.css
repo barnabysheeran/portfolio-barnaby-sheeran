@@ -1,6 +1,7 @@
 @import "./system/grid.css";
 
 @import "./system/colours.css";
+@import "./system/font.css";
 @import "./system/breakpoints.css";
 @import "./system/animation.css";
 @import "./system/border.css";

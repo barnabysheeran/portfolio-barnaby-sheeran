@@ -1,0 +1,51 @@
+:root {
+  --font-headline: 'MuseoModerno', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Body text styles */
+  --font-body-heading: var(--font-body);
+  --font-body-content: var(--font-body);
+  
+  /* Font weights */
+  --font-weight-body-heading: 600;  /* Semi-bold for body headings */
+  --font-weight-body-content: 400;  /* Regular for body content */
+  --font-weight-body-light: 300;    /* Light for captions/metadata */
+}
+
+/* Body text utility classes */
+.body-heading {
+  font-family: var(--font-body-heading);
+  font-weight: var(--font-weight-body-heading);
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.4;
+}
+
+.body-content {
+  font-family: var(--font-body-content);
+  font-weight: var(--font-weight-body-content);
+  font-size: 1rem; /* 16px */
+  line-height: 1.6;
+}
+
+.body-caption {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-body-light);
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.5;
+}
+
+@font-face {
+  font-family: 'MuseoModerno';
+  src: url('./asset/font/museo-moderno/MuseoModerno-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./asset/font/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

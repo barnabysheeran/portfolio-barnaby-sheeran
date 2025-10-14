@@ -1,1 +1,3 @@
-.site-footer {}
+.site-footer {
+    height: calc(var(--grid-cell-height) * 12.0);
+}

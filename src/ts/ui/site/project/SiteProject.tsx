@@ -18,8 +18,7 @@ export default function SiteProject({ projectData }: SiteProjectProps) {
       transition={{ duration: 0.6 }}
       viewport={{ once: true, margin: '-100px' }}
     >
-      <h3>{projectData.title}</h3>
-      <p>{projectData.description}</p>
+      {projectData.title} - {projectData.description}
       <MediaViewer media={projectData.media} />
     </motion.div>
   );
