@@ -1,5 +1,5 @@
 .ui-site-control {
     position: absolute;
-    top: calc(var(--grid-cell-height) * 5);
-    left: calc(var(--grid-cell-width) * 5);
+    top: calc(var(--grid-cell-height) * 6);
+    left: calc(var(--grid-cell-width) * 6);
 }
