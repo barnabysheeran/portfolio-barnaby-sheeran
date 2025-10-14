@@ -11,11 +11,12 @@ export default function ScrollProgress() {
   const [scrollProgressDisplay, setScrollProgressDisplay] = useState(0);
   const animatorRef = useRef<ScrollProgressAnimator | null>(null);
 
-  // Convert rem to pixels for calculations (assuming 1rem = 16px)
-  const radiusRem = 2.8125;
-  const radiusPx = radiusRem * 16;
+  // Ring dimensions in pixels
+  const ringSize = 100;
+  const ringRadius = 45;
+  const strokeWidth = 4;
 
-  const circumference = 2 * Math.PI * radiusPx;
+  const circumference = 2 * Math.PI * ringRadius;
   const strokeDashoffset =
     circumference - scrollProgressDisplay * circumference;
 
@@ -50,18 +51,26 @@ export default function ScrollProgress() {
     <div className={styles['scroll-progress']}>
       <svg
         className={styles['progress-ring']}
-        width="6.25rem"
-        height="6.25rem"
-        viewBox="0 0 100 100"
+        width={ringSize}
+        height={ringSize}
+        viewBox={`0 0 ${ringSize} ${ringSize}`}
       >
+        {/* Background track */}
+        <circle
+          className={styles['progress-ring-track']}
+          r={ringRadius}
+          cx={ringSize / 2}
+          cy={ringSize / 2}
+          strokeWidth={strokeWidth}
+        />
+
+        {/* Progress circle */}
         <circle
           className={styles['progress-ring-circle']}
-          stroke="currentColor"
-          strokeWidth="0.25rem"
-          fill="transparent"
-          r="45"
-          cx="50"
-          cy="50"
+          r={ringRadius}
+          cx={ringSize / 2}
+          cy={ringSize / 2}
+          strokeWidth={strokeWidth}
           style={{
             strokeDasharray: circumference,
             strokeDashoffset: strokeDashoffset,
