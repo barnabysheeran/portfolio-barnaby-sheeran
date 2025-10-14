@@ -1,6 +1,6 @@
-import { useUIStateStore } from '../../../store/uiState/uiStateStore';
+import { useUIStateStore } from '../../../../store/uiState/uiStateStore';
 
-import ButtonTheme from '../../component/button/theme/ButtonTheme';
+import ButtonTheme from '../../../component/button/theme/ButtonTheme';
 
 import styles from './ThemeSwitcher.module.css';
 

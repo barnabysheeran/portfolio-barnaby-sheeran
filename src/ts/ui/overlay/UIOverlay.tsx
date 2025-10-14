@@ -1,5 +1,4 @@
-import ScrollProgress from './scroll/ScrollProgress';
-import ThemeSwitcher from './theme/ThemeSwitcher';
+import UISiteControl from './site-control/UISiteControl';
 
 import styles from './UIOverlay.module.css';
 
@@ -8,8 +7,7 @@ export default function UIOverlay() {
 
   return (
     <div className={styles['ui-overlay']}>
-      <ScrollProgress />
-      <ThemeSwitcher />
+      <UISiteControl />
     </div>
   );
 }
