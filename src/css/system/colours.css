@@ -7,8 +7,10 @@
   /* Light Mode (Default) */
   --background: var(--color-white);
   --surface: var(--color-white);
+
   --text: var(--color-black);
   --text-secondary: rgba(0, 0, 0, 0.6);
+
   --border: rgba(0, 0, 0, 0.1);
   --accent: rgba(59, 130, 246, 1); /* Blue accent */
 }
@@ -17,8 +19,10 @@
   /* Dark Mode */
   --background: var(--color-black);
   --surface: rgba(30, 30, 30, 1);
+
   --text: var(--color-white);
   --text-secondary: rgba(255, 255, 255, 0.6);
+  
   --border: rgba(255, 255, 255, 0.1);
   --accent: rgba(96, 165, 250, 1); /* Lighter blue accent */
 }
