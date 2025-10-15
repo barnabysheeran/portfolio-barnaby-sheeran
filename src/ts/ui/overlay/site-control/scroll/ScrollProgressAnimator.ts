@@ -21,9 +21,9 @@ export default class ScrollProgressAnimator {
   #startAnimation(): void {
     // Only start animation if one isn't already running
     if (!this.#animationFrameId) {
-      console.log(
-        'Starting animation ' + this.#currentValue + ' to ' + this.#targetValue,
-      );
+      // console.log(
+      //   'Starting animation ' + this.#currentValue + ' to ' + this.#targetValue,
+      // );
 
       this.#animate();
     }
