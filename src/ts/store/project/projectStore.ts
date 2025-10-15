@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import { type ProjectData } from '../../type/project';
+import { type ProjectData } from '../../types/project';
 
 import projectsData from '../../data/projects.json';
 

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-import { type ProjectData } from '../../../type/project';
+import { type ProjectData } from '../../../types/project';
 import MediaViewer from '../../component/viewer/MediaViewer';
 
 import styles from './SiteProject.module.css';

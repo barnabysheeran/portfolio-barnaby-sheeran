@@ -1,0 +1,21 @@
+.scroll-progress {
+    transform: translate(-50%, -50%);
+}
+
+.scroll-progress .progress-ring {
+    transform: rotate(-90deg); /* Start from top */
+    width: 100%;
+    height: 100%;
+}
+
+.scroll-progress .progress-ring-track {
+    stroke: rgba(255, 255, 255, 0.1);
+
+    fill: transparent;
+}
+
+.scroll-progress .progress-ring-circle {
+    stroke: #3b82f6; /* Blue color */
+    stroke-linecap: round;
+    fill: transparent;
+}

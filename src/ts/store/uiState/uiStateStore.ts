@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-type Theme = 'light' | 'dark';
+import { type Theme, THEMES } from '../../types';
 
 interface UIState {
   theme: Theme;
@@ -11,11 +11,11 @@ interface UIState {
 export const useUIStateStore = create<UIState>()(
   persist(
     (set) => ({
-      theme: 'light',
+      theme: THEMES.LIGHT,
       setTheme: (theme) => {
         document.documentElement.classList.toggle(
           'theme-dark',
-          theme === 'dark',
+          theme === THEMES.DARK,
         );
         set({ theme });
       },
@@ -27,7 +27,7 @@ export const useUIStateStore = create<UIState>()(
         if (state) {
           document.documentElement.classList.toggle(
             'theme-dark',
-            state.theme === 'dark',
+            state.theme === THEMES.DARK,
           );
         }
       },

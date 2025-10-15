@@ -2,14 +2,13 @@
     height: calc(var(--grid-cell-height) * 18.0);
     width: 100%;
     display: flex;
-    align-items: center;
+
     justify-content: center;
     container-type: inline-size;
 }
 
 .site-header .title {
     font-family: var(--font-headline);
-    font-weight: 350;
+    font-weight: 300;
     font-size: clamp(1.5rem, 6cqw, 2.5rem);
-    line-height: 1.2;
 }
