@@ -1,6 +1,7 @@
 import { useScrollProgress } from '../../../../hook/useScrollProgress';
 import { useState, useEffect, useRef } from 'react';
-import { ScrollProgressAnimator } from './ScrollProgressAnimator';
+
+import ScrollProgressAnimator from './ScrollProgressAnimator';
 
 import styles from './ScrollProgress.module.css';
 

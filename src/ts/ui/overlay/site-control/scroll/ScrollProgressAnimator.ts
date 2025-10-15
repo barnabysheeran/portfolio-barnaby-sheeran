@@ -1,4 +1,4 @@
-export class ScrollProgressAnimator {
+export default class ScrollProgressAnimator {
   #currentValue: number = 0;
   #targetValue: number = 0;
   #lerpFactor: number = 0.05;
