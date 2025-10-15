@@ -12,8 +12,9 @@ export default function ThemeSwitcher() {
   // _____________________________________________________________________ State
 
   const { theme, setTheme } = useUIStateStore();
-  const backgroundControls = useAnimationControls();
+  const animationControls = useAnimationControls();
   const animatorRef = useRef<ThemeSwitcherAnimator | null>(null);
+  const controlsRef = useRef(animationControls);
 
   // _____________________________________________________________________ Theme
 
@@ -23,15 +24,20 @@ export default function ThemeSwitcher() {
 
   // _________________________________________________________________ Animation
 
+  // Keep the ref updated
+  useEffect(() => {
+    controlsRef.current = animationControls;
+  }, [animationControls]);
+
   useEffect(() => {
     // Pass the controls to the animator instance
-    animatorRef.current = new ThemeSwitcherAnimator(backgroundControls);
+    animatorRef.current = new ThemeSwitcherAnimator(controlsRef.current);
 
     return () => {
       animatorRef.current?.destroy();
       animatorRef.current = null;
     };
-  }, [backgroundControls]);
+  }, []);
 
   // ____________________________________________________________________ Render
 
@@ -69,7 +75,7 @@ export default function ThemeSwitcher() {
       {/* Background Layer - Now a motion component */}
       <motion.div
         className={styles['background-layer']}
-        animate={backgroundControls}
+        animate={animationControls}
         initial={{ scale: 1 }}
       />
     </div>
