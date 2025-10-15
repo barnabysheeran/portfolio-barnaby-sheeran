@@ -3,6 +3,7 @@ import { Sun, Moon } from 'lucide-react';
 import { motion, useAnimationControls } from 'framer-motion';
 
 import { useUIStateStore } from '../../../../store/uiState/uiStateStore';
+import { THEMES } from '../../../../types';
 
 import ThemeSwitcherAnimator from './ThemeSwitcherAnimator';
 
@@ -19,7 +20,7 @@ export default function ThemeSwitcher() {
   // _____________________________________________________________________ Theme
 
   const handleThemeToggle = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    setTheme(theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT);
   };
 
   // _________________________________________________________________ Animation
