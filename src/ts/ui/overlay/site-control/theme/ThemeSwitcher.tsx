@@ -52,13 +52,13 @@ export default function ThemeSwitcher() {
       <button
         className={styles['invisible-button']}
         onClick={handleThemeToggle}
-        aria-label={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} theme`}
+        aria-label={`Switch to ${theme === THEMES.LIGHT ? 'Dark' : 'Light'} theme`}
       />
 
       {/* Icon Layer 1 - Sun (Light Theme) */}
       <div
         className={`${styles['icon-layer']} ${styles['sun-icon']} ${
-          theme === 'light' ? styles['active'] : ''
+          theme === THEMES.LIGHT ? styles['active'] : ''
         }`}
       >
         <Sun />
@@ -67,7 +67,7 @@ export default function ThemeSwitcher() {
       {/* Icon Layer 2 - Moon (Dark Theme) */}
       <div
         className={`${styles['icon-layer']} ${styles['moon-icon']} ${
-          theme === 'dark' ? styles['active'] : ''
+          theme === THEMES.DARK ? styles['active'] : ''
         }`}
       >
         <Moon />
