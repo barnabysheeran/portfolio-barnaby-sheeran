@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import type { MediaItem } from '../../../../types';
@@ -9,7 +8,7 @@ import styles from './MediaHolder.module.css';
 interface MediaHolderProps {
   media: MediaItem;
   index: number;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export default function MediaHolder({
@@ -17,47 +16,19 @@ export default function MediaHolder({
   index,
   onClick,
 }: MediaHolderProps) {
-  // _____________________________________________________________________ State
-
-  const [direction, setDirection] = useState(0);
-
-  // ___________________________________________________________________ Swipe
-
-  const swipeConfidenceThreshold =
-    MediaHolderAnimator.getSwipeConfidenceThreshold();
-
-  const handleDragEnd = (
-    _e: MouseEvent | TouchEvent | PointerEvent,
-    { offset, velocity }: { offset: { x: number }; velocity: { x: number } },
-  ) => {
-    const swipe = MediaHolderAnimator.swipePower(offset.x, velocity.x);
-
-    if (swipe < -swipeConfidenceThreshold) {
-      setDirection(1);
-      onClick();
-    } else if (swipe > swipeConfidenceThreshold) {
-      setDirection(-1);
-      onClick();
-    }
-  };
-
   // ____________________________________________________________________ Render
 
   return (
-    <AnimatePresence initial={false} custom={direction} mode="wait">
+    <AnimatePresence initial={false} mode="wait">
       <motion.div
         key={index}
-        className={styles['media-holder']}
-        custom={direction}
+        className={`${styles['media-holder']} ${!onClick ? styles['media-holder--disabled'] : ''}`}
         variants={MediaHolderAnimator.getMediaVariants()}
         initial="enter"
         animate="center"
         exit="exit"
-        drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
-        dragElastic={1}
-        onDragEnd={handleDragEnd}
         onClick={onClick}
+        style={{ cursor: onClick ? 'pointer' : 'default' }}
       >
         {media.type === 'image' ? (
           <img

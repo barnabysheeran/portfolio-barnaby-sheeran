@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import type { MediaItem } from '../../../types';
+
 import MediaHolder from './holder/MediaHolder';
 import MediaNavigation from './navigation/MediaNavigation';
 
@@ -18,9 +19,12 @@ export default function MediaViewer({ media }: MediaViewerProps) {
   // _____________________________________________________________________ Media
 
   const currentMedia = media[currentIndex];
+  const hasMultipleItems = media.length > 1;
 
   const handleMediaClick = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % media.length);
+    if (hasMultipleItems) {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % media.length);
+    }
   };
 
   const handleNavigate = (index: number) => {
@@ -39,7 +43,7 @@ export default function MediaViewer({ media }: MediaViewerProps) {
         <MediaHolder
           media={currentMedia}
           index={currentIndex}
-          onClick={handleMediaClick}
+          onClick={hasMultipleItems ? handleMediaClick : undefined}
         />
       </div>
 

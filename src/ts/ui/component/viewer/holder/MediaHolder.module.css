@@ -5,8 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   user-select: none;
+}
+
+.media-holder--disabled {
+  pointer-events: none;
 }
 
 .media-image,
