@@ -12,8 +12,12 @@ export default function UIContainer() {
   return (
     <div className={`${styles['ui-container']}`}>
       <SiteHeader />
-      {projects.map((project) => (
-        <SiteProject key={project.id} projectData={project} />
+      {projects.map((project, index) => (
+        <SiteProject
+          key={project.id}
+          projectData={project}
+          isReversed={index % 2 === 1}
+        />
       ))}
       <SiteFooter />
     </div>
