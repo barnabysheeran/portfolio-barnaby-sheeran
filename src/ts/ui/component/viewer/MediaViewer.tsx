@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
 import type { MediaItem } from '../../../types';
+import MediaHolder from './holder/MediaHolder';
+import MediaNavigation from './navigation/MediaNavigation';
 
 import styles from './MediaViewer.module.css';
 
@@ -17,19 +19,35 @@ export default function MediaViewer({ media }: MediaViewerProps) {
 
   const currentMedia = media[currentIndex];
 
-  const handleClick = () => {
+  const handleMediaClick = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % media.length);
+  };
+
+  const handleNavigate = (index: number) => {
+    setCurrentIndex(index);
   };
 
   // ____________________________________________________________________ Render
 
   return (
-    <div className={styles['media-viewer']} onClick={handleClick}>
-      {currentMedia.type === 'image' ? (
-        <img src={currentMedia.url} alt="Project media" />
-      ) : (
-        <video src={currentMedia.url} controls />
-      )}
+    <div className={styles['media-viewer']}>
+      <div
+        className={styles['media-container']}
+        role="region"
+        aria-label={`Media viewer. Currently viewing ${currentIndex + 1} of ${media.length}`}
+      >
+        <MediaHolder
+          media={currentMedia}
+          index={currentIndex}
+          onClick={handleMediaClick}
+        />
+      </div>
+
+      <MediaNavigation
+        media={media}
+        currentIndex={currentIndex}
+        onNavigate={handleNavigate}
+      />
     </div>
   );
 }
