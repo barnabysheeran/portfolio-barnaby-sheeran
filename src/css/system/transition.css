@@ -1,0 +1,32 @@
+:root {
+  --transition-quick: var(--duration-quick);
+  --transition-slow: var(--duration-slow);
+}
+
+/* ____________________________________________________________________ Theme */
+
+:root {
+  transition-property: background-color, color;
+  transition-duration: var(--transition-slow);
+  transition-timing-function: ease;
+}
+
+* {
+  transition-property: background-color, color, border-color, fill, stroke;
+  transition-duration: var(--transition-slow);
+  transition-timing-function: ease;
+}
+
+/* _____________________________________________________________________ Util */
+
+.transition-quick {
+  transition-duration: var(--transition-quick) !important;
+}
+
+.transition-slow {
+  transition-duration: var(--transition-slow) !important;
+}
+
+.transition-none {
+  transition: none !important;
+}
