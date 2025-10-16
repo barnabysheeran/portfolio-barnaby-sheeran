@@ -1,3 +1,7 @@
+import { motion } from 'framer-motion';
+
+import { fadeQuickVariants } from '../../../motion/fade';
+
 import ScrollProgress from './scroll/ScrollProgress';
 import ThemeSwitcher from './theme/ThemeSwitcher';
 
@@ -7,9 +11,14 @@ export default function UISiteControl() {
   // ____________________________________________________________________ Render
 
   return (
-    <div className={styles['ui-site-control']}>
+    <motion.div
+      className={styles['ui-site-control']}
+      initial="hidden"
+      animate="visible"
+      variants={fadeQuickVariants}
+    >
       <ScrollProgress />
       <ThemeSwitcher />
-    </div>
+    </motion.div>
   );
 }

@@ -1,6 +1,6 @@
 import type { Variants } from 'framer-motion';
 
-import { DURATION_QUICK, DURATION_SLOW } from './constants';
+import { DURATION_QUICK, DURATION_SLOW } from './duration';
 
 // _______________________________________________________________________ Quick
 
