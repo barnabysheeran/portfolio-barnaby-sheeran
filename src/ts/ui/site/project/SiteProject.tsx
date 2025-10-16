@@ -10,6 +10,8 @@ interface SiteProjectProps {
 }
 
 export default function SiteProject({ projectData }: SiteProjectProps) {
+  // ____________________________________________________________________ Render
+
   return (
     <motion.div
       className={styles['site-project']}
