@@ -1,0 +1,20 @@
+.site-project-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+}
+
+.site-project-text__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text-primary, #fff);
+}
+
+.site-project-text__description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--color-text-secondary, rgba(255, 255, 255, 0.8));
+}

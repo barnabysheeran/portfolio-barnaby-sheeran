@@ -35,18 +35,11 @@ export default function MediaViewer({ media }: MediaViewerProps) {
 
   return (
     <div className={styles['media-viewer']}>
-      <div
-        className={styles['media-container']}
-        role="region"
-        aria-label={`Media viewer. Currently viewing ${currentIndex + 1} of ${media.length}`}
-      >
-        <MediaHolder
-          media={currentMedia}
-          index={currentIndex}
-          onClick={hasMultipleItems ? handleMediaClick : undefined}
-        />
-      </div>
-
+      <MediaHolder
+        media={currentMedia}
+        index={currentIndex}
+        onClick={hasMultipleItems ? handleMediaClick : undefined}
+      />
       <MediaNavigation
         media={media}
         currentIndex={currentIndex}

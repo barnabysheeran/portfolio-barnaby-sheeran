@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 
 import { type ProjectData } from '../../../types/project';
+
 import MediaViewer from '../../component/viewer/MediaViewer';
+import SiteProjectText from './text/SiteProjectText';
 
 import styles from './SiteProject.module.css';
 
@@ -20,7 +22,7 @@ export default function SiteProject({ projectData }: SiteProjectProps) {
       transition={{ duration: 0.6 }}
       viewport={{ once: true, margin: '-100px' }}
     >
-      {projectData.title} - {projectData.description}
+      <SiteProjectText projectData={projectData} />
       <MediaViewer media={projectData.media} />
     </motion.div>
   );
