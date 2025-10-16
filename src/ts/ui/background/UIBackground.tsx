@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+import { useUIStateStore } from '../../store/uiState/uiStateStore';
 import { BackgroundController } from './BackgroundController';
 
 import styles from './UIBackground.module.css';
@@ -9,6 +10,10 @@ export default function UIBackground() {
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const controllerRef = useRef<BackgroundController | null>(null);
+
+  // _____________________________________________________________________ Store
+
+  const theme = useUIStateStore((state) => state.theme);
 
   // ________________________________________________________________ Background
 
@@ -21,6 +26,14 @@ export default function UIBackground() {
       controllerRef.current?.destroy();
     };
   }, []);
+
+  // _____________________________________________________________________ Theme
+
+  useEffect(() => {
+    if (controllerRef.current) {
+      controllerRef.current.setTheme(theme);
+    }
+  }, [theme]);
 
   // ____________________________________________________________________ Render
 

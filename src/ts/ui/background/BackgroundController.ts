@@ -80,7 +80,7 @@ export class BackgroundController {
   // ______________________________________________________________________ Size
 
   #setSize(width: number, height: number): void {
-    console.log('BackgroundController. setSize', width, height);
+    // console.log('BackgroundController. setSize', width, height);
 
     // Renderer
     this.#RENDER_CONTROLLER.setSize(width, height);
@@ -88,6 +88,14 @@ export class BackgroundController {
     // Store
     this.#width = width;
     this.#height = height;
+  }
+
+  // _____________________________________________________________________ Theme
+
+  setTheme(theme: string): void {
+    console.log('BackgroundController.setTheme', theme);
+
+    // TODO Update Scene Background on Theme Change
   }
 
   // ___________________________________________________________________ Destroy

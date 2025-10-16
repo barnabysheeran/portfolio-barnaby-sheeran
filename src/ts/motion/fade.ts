@@ -12,12 +12,14 @@ export const fadeQuickVariants: Variants = {
     opacity: 1,
     transition: {
       duration: DURATION_QUICK,
+      ease: 'circOut',
     },
   },
   exit: {
     opacity: 0,
     transition: {
       duration: DURATION_QUICK,
+      ease: 'circOut',
     },
   },
 };
@@ -32,12 +34,14 @@ export const fadeSlowVariants: Variants = {
     opacity: 1,
     transition: {
       duration: DURATION_SLOW,
+      ease: 'circOut',
     },
   },
   exit: {
     opacity: 0,
     transition: {
       duration: DURATION_SLOW,
+      ease: 'circOut',
     },
   },
 };

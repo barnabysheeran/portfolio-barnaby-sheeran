@@ -13,7 +13,7 @@ export function useScrollProgress() {
       setScrollProgress(Math.min(scrollPercent, 1)); // Clamp to 1
     };
 
-    // Update on mount
+    // Update On Mount
     updateScrollProgress();
 
     // Add event listener
