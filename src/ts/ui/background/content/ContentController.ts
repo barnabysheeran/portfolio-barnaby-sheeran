@@ -1,19 +1,11 @@
-import {
-  Scene,
-  BoxGeometry,
-  MeshBasicMaterial,
-  Mesh,
-  PerspectiveCamera,
-} from 'three';
+import { Scene, PerspectiveCamera } from 'three';
 
 import CursorController from './cursor/CursorController';
+import Cursor from './cursor/Cursor';
 
 export default class ContentController {
-  #SCENE: Scene;
-
-  #CUBE: Mesh;
-
   #CURSOR_CONTROLLER: CursorController;
+  #CURSOR: Cursor;
 
   // ___________________________________________________________________________
 
@@ -22,9 +14,6 @@ export default class ContentController {
     scene: Scene,
     perspectiveCamera: PerspectiveCamera,
   ) {
-    // Store
-    this.#SCENE = scene;
-
     // Create Cursor Controller
     this.#CURSOR_CONTROLLER = new CursorController(
       canvas,
@@ -32,14 +21,8 @@ export default class ContentController {
       perspectiveCamera,
     );
 
-    // Create a simple cube
-    const geometry = new BoxGeometry(1, 1, 1);
-    const material = new MeshBasicMaterial({
-      color: 0xffffff,
-      wireframe: true,
-    });
-    this.#CUBE = new Mesh(geometry, material);
-    this.#SCENE.add(this.#CUBE);
+    // Create Cursor
+    this.#CURSOR = new Cursor(scene);
   }
 
   // ______________________________________________________________________ Tick
@@ -48,12 +31,8 @@ export default class ContentController {
     // Tick Cursor Controller
     const CURSOR_POSITION = this.#CURSOR_CONTROLLER.tick();
 
-    // Position Cube
-    this.#CUBE.position.set(CURSOR_POSITION.x, CURSOR_POSITION.y, 0);
-
-    // Rotate cube
-    this.#CUBE.rotation.x += 0.00001 * frameDeltaMS;
-    this.#CUBE.rotation.y += 0.00001 * frameDeltaMS;
+    // Tick Cursor
+    this.#CURSOR.tick(frameDeltaMS, CURSOR_POSITION);
   }
 
   // ___________________________________________________________________ Destroy

@@ -44,13 +44,14 @@ export default class CursorController {
     this.#PLANE = new Mesh(GEOMETRY, MATERIAL);
     scene.add(this.#PLANE);
 
-    // Add Event Listener
-    this.#CANVAS.addEventListener('mousemove', this.#onMouseMove);
+    // Add Event Listeners
+    this.#CANVAS.addEventListener('mousemove', this.#onMouseMove.bind(this));
+    this.#CANVAS.addEventListener('mouseout', this.#onMouseOut.bind(this));
   }
 
-  // ________________________________________________________________ Mouse Move
+  // ______________________________________________________________ Mouse Events
 
-  #onMouseMove = (event: MouseEvent): void => {
+  #onMouseMove(event: MouseEvent): void {
     // Get Client Rectangle
     const RECT = this.#CANVAS.getBoundingClientRect();
 
@@ -58,9 +59,12 @@ export default class CursorController {
     this.#POSITION_MOUSE.x = ((event.clientX - RECT.left) / RECT.width) * 2 - 1;
     this.#POSITION_MOUSE.y =
       -((event.clientY - RECT.top) / RECT.height) * 2 + 1;
+  }
 
-    console.log('Mouse Position:', this.#POSITION_MOUSE);
-  };
+  #onMouseOut(): void {
+    this.#POSITION_MOUSE.x = 0;
+    this.#POSITION_MOUSE.y = 0;
+  }
 
   // ______________________________________________________________________ Tick
 
