@@ -6,7 +6,6 @@
 
   /* Light (Default) */
   --background: var(--color-white);
-
   --text: var(--color-black);
 }
 
@@ -15,6 +14,5 @@
 .theme-dark {
   /* Dark */
   --background: rgba(23, 21, 32, 1);
-
   --text: var(--color-white);
 }

@@ -2,7 +2,7 @@
 
     {
         "id": "1",
-        "title": "Demo Project with One Image",
+        "title": "Onfigr - 1",
         "description": "This is a sample project description.",
         "media": [
             {
@@ -14,7 +14,7 @@
 
     {
         "id": "2",
-        "title": "Demo Project with Two Images",
+        "title": "Onfigr - 2",
         "description": "This is a sample project description.",
         "media": [
             {
@@ -30,7 +30,67 @@
 
     {
         "id": "3",
-        "title": "Demo Project with Two Images & a Video",
+        "title": "Onfigr - 3",
+        "description": "This is a sample project description.",
+        "media": [
+            {
+                "type": "image",
+                "url": "asset/project/test/1.webp"
+            },
+            {
+                "type": "video",
+                "url": "asset/project/test/1.mp4"
+            },
+            {
+                "type": "image",
+                "url": "asset/project/test/2.webp"
+            }
+        ]
+    },
+
+    {
+        "id": "4",
+        "title": "BattleBuilder",
+        "description": "This is a sample project description.",
+        "media": [
+            {
+                "type": "image",
+                "url": "asset/project/test/1.webp"
+            },
+            {
+                "type": "video",
+                "url": "asset/project/test/1.mp4"
+            },
+            {
+                "type": "image",
+                "url": "asset/project/test/2.webp"
+            }
+        ]
+    },
+
+    {
+        "id": "5",
+        "title": "PostMatter",
+        "description": "This is a sample project description.",
+        "media": [
+            {
+                "type": "image",
+                "url": "asset/project/test/1.webp"
+            },
+            {
+                "type": "video",
+                "url": "asset/project/test/1.mp4"
+            },
+            {
+                "type": "image",
+                "url": "asset/project/test/2.webp"
+            }
+        ]
+    },
+
+    {
+        "id": "6",
+        "title": "Ferrari - Flagship Store",
         "description": "This is a sample project description.",
         "media": [
             {
