@@ -32,6 +32,13 @@ export default class CameraController {
     return this.#PERSPECTIVE_CAMERA;
   }
 
+  // ______________________________________________________________________ Size
+
+  setSize(width: number, height: number): void {
+    this.#PERSPECTIVE_CAMERA.aspect = width / height;
+    this.#PERSPECTIVE_CAMERA.updateProjectionMatrix();
+  }
+
   // ___________________________________________________________________ Destroy
 
   destroy(): void {}

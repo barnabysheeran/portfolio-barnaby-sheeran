@@ -84,9 +84,10 @@ export class BackgroundController {
   // ______________________________________________________________________ Size
 
   #setSize(width: number, height: number): void {
-    // console.log('BackgroundController. setSize', width, height);
+    console.log('BackgroundController. setSize', width, height);
 
-    // Renderer
+    // Size
+    this.#CAMERA_CONTROLLER.setSize(width, height);
     this.#RENDER_CONTROLLER.setSize(width, height);
 
     // Store

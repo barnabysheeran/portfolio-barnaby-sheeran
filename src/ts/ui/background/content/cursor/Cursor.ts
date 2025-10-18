@@ -1,4 +1,3 @@
-import { th } from 'framer-motion/client';
 import {
   Scene,
   Group,
@@ -6,7 +5,6 @@ import {
   MeshBasicMaterial,
   Mesh,
   Vector2,
-  Vector3,
 } from 'three';
 
 export default class Cursor {
@@ -18,7 +16,7 @@ export default class Cursor {
 
   #VELOCITY: Vector2;
   #VELOCITY_DECAY: number = 0.1;
-  #VELOCITY_SCALE: number = 5.0;
+  #VELOCITY_SCALE: number = 0.1;
 
   #LERP_FACTOR: number = 0.1;
 
@@ -51,30 +49,27 @@ export default class Cursor {
     this.#POSITION_TARGET.x = cursorPosition.x;
     this.#POSITION_TARGET.y = cursorPosition.y;
 
+    // Decay Velocity
+    this.#VELOCITY.x *= this.#VELOCITY_DECAY;
+    this.#VELOCITY.y *= this.#VELOCITY_DECAY;
+
     // Lerp to Target Position
     this.#GROUP.position.x +=
       (this.#POSITION_TARGET.x - this.#GROUP.position.x) * this.#LERP_FACTOR;
     this.#GROUP.position.y +=
       (this.#POSITION_TARGET.y - this.#GROUP.position.y) * this.#LERP_FACTOR;
 
-    // Calculate new velocity (difference between new and previous position)
-    const newVelX = this.#GROUP.position.x - this.#POSITION_PREV.x;
-    const newVelY = this.#GROUP.position.y - this.#POSITION_PREV.y;
+    // Add to Velocity
+    this.#VELOCITY.x +=
+      (this.#GROUP.position.x - this.#POSITION_PREV.x) * frameDeltaMS;
+    this.#VELOCITY.y +=
+      (this.#GROUP.position.y - this.#POSITION_PREV.y) * frameDeltaMS;
 
-    // If there is movement, update velocity; otherwise, decay
-    if (Math.abs(newVelX) > 1e-5 || Math.abs(newVelY) > 1e-5) {
-      this.#VELOCITY.x = newVelX;
-      this.#VELOCITY.y = newVelY;
-    } else {
-      this.#VELOCITY.x *= this.#VELOCITY_DECAY;
-      this.#VELOCITY.y *= this.#VELOCITY_DECAY;
-    }
-
-    // Use velocity to rotate the cube (more free spin)
+    // Rotate from Velocity
     this.#CUBE.rotation.x += this.#VELOCITY.y * this.#VELOCITY_SCALE;
     this.#CUBE.rotation.y += this.#VELOCITY.x * this.#VELOCITY_SCALE;
 
-    // Store current position as previous for next frame
+    // Store
     this.#POSITION_PREV.x = this.#GROUP.position.x;
     this.#POSITION_PREV.y = this.#GROUP.position.y;
   }
