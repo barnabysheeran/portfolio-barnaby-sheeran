@@ -14,22 +14,35 @@ export default class RenderController {
     });
 
     // Set Pixel Ratio
-    this.#WEBGL_RENDERER.setPixelRatio(window.devicePixelRatio);
+    this.#setDevicePixelRatio();
   }
 
-  // ______________________________________________________________________ Tick
+  // ____________________________________________________________________ Render
 
   render(scene: Scene, camera: PerspectiveCamera): void {
     this.#WEBGL_RENDERER.render(scene, camera);
   }
 
+  // ________________________________________________________ Device Pixel Ratio
+
+  #setDevicePixelRatio(): void {
+    const PIXEL_RATIO = window.devicePixelRatio || 1;
+    this.#WEBGL_RENDERER.setPixelRatio(PIXEL_RATIO);
+  }
+
   // ______________________________________________________________________ Size
 
   setSize(width: number, height: number): void {
+    // Update Pixel Ratio
+    this.#setDevicePixelRatio();
+
+    // Set Size
     this.#WEBGL_RENDERER.setSize(width, height, true);
   }
 
   // ___________________________________________________________________ Destroy
 
-  destroy(): void {}
+  destroy(): void {
+    this.#WEBGL_RENDERER.dispose();
+  }
 }

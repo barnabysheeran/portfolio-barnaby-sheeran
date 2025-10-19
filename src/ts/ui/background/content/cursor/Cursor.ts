@@ -56,13 +56,8 @@ export default class Cursor {
   // ______________________________________________________________________ Tick
 
   tick(frameDeltaMS: number, cursorPosition3D: Vector2): void {
-    // Test - Set Position Directly
-    // this.#GROUP.position.x = cursorPosition3D.x;
-    // this.#GROUP.position.y = cursorPosition3D.y;
-
-    // console.log('Cursor.tick cursorPosition3D', cursorPosition3D);
-
-    const FRAME_DELTA_S = frameDeltaMS * 0.001; // convert ms to seconds
+    // Calculate Frame Delta Seconds
+    const FRAME_DELTA_S = frameDeltaMS * 0.001;
 
     // Set Target Position
     this.#POSITION_TARGET.x = cursorPosition3D.x;
