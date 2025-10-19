@@ -38,7 +38,6 @@ export class BackgroundController {
     this.#LIGHT_CONTROLLER = new LightController(this.#SCENE);
     this.#CAMERA_CONTROLLER = new CameraController(this.#SCENE);
     this.#CONTENT_CONTROLLER = new ContentController(
-      canvas,
       this.#SCENE,
       this.#CAMERA_CONTROLLER.getPerspectiveCamera(),
     );

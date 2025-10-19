@@ -9,17 +9,9 @@ export default class ContentController {
 
   // ___________________________________________________________________________
 
-  constructor(
-    canvas: HTMLCanvasElement,
-    scene: Scene,
-    perspectiveCamera: PerspectiveCamera,
-  ) {
+  constructor(scene: Scene, perspectiveCamera: PerspectiveCamera) {
     // Create Cursor Controller
-    this.#CURSOR_CONTROLLER = new CursorController(
-      canvas,
-      scene,
-      perspectiveCamera,
-    );
+    this.#CURSOR_CONTROLLER = new CursorController(scene, perspectiveCamera);
 
     // Create Cursor
     this.#CURSOR = new Cursor(scene);

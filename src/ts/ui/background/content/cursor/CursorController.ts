@@ -11,7 +11,6 @@ import {
 import { useUIStateStore } from '../../../../store/uiState/uiStateStore';
 
 export default class CursorController {
-  #CANVAS: HTMLCanvasElement;
   #PERSPECTIVE_CAMERA: PerspectiveCamera;
 
   #RAYCASTER: Raycaster;
@@ -19,13 +18,8 @@ export default class CursorController {
 
   // ___________________________________________________________________________
 
-  constructor(
-    canvas: HTMLCanvasElement,
-    scene: Scene,
-    perspectiveCamera: PerspectiveCamera,
-  ) {
+  constructor(scene: Scene, perspectiveCamera: PerspectiveCamera) {
     // Store
-    this.#CANVAS = canvas;
     this.#PERSPECTIVE_CAMERA = perspectiveCamera;
 
     // Create Raycaster
@@ -50,9 +44,6 @@ export default class CursorController {
     // Get Data from Store
     const CURSOR_POSITION_PX = useUIStateStore.getState().cursorPositionPx;
     const SURFACE_SIZE_PX = useUIStateStore.getState().surfaceSizePx;
-
-    // console.log('CursorController.tick CURSOR_POSITION_PX', CURSOR_POSITION_PX);
-    // console.log('CursorController.tick SURFACE_SIZE_PX', SURFACE_SIZE_PX);
 
     // Calculate Normalized Coordinates
     const NORMALIZED_COORDINATES = new Vector2(
