@@ -51,35 +51,6 @@ export default class Cursor {
       sphere.position.set(x, y, z);
       this.#GROUP.add(sphere);
     }
-
-    // Get Vertex Positions
-    // const vertexPositions: Vector3[] = [];
-
-    // icosahedron.geometry.attributes.position.array.forEach((value, index) => {
-    //   if (index % 3 === 0) {
-    //     const x = value as number;
-    //     const y = icosahedron.geometry.attributes.position.array[
-    //       index + 1
-    //     ] as number;
-    //     const z = icosahedron.geometry.attributes.position.array[
-    //       index + 2
-    //     ] as number;
-    //     vertexPositions.push(new Vector3(x, y, z));
-    //   }
-    // });
-
-    // console.log('Icosahedron Vertex Positions:', vertexPositions);
-
-    // Create a Sphere at each vertex position of the icosahedron
-    // vertexPositions.forEach((position) => {
-    //   const SPHERE_GEOMETRY = new SphereGeometry(0.1, 16, 16);
-    //   const SPHERE_MATERIAL = new MeshBasicMaterial({
-    //     color: 0xff0000,
-    //   });
-    //   const sphere = new Mesh(SPHERE_GEOMETRY, SPHERE_MATERIAL);
-    //   sphere.position.copy(position);
-    //   this.#GROUP.add(sphere);
-    // });
   }
 
   // ______________________________________________________________________ Tick

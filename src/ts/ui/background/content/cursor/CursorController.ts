@@ -8,11 +8,12 @@ import {
   Vector2,
 } from 'three';
 
+import { useUIStateStore } from '../../../../store/uiState/uiStateStore';
+
 export default class CursorController {
   #CANVAS: HTMLCanvasElement;
   #PERSPECTIVE_CAMERA: PerspectiveCamera;
 
-  #POSITION_MOUSE: Vector2;
   #RAYCASTER: Raycaster;
   #PLANE: Mesh;
 
@@ -27,9 +28,6 @@ export default class CursorController {
     this.#CANVAS = canvas;
     this.#PERSPECTIVE_CAMERA = perspectiveCamera;
 
-    // Initialize Mouse Position
-    this.#POSITION_MOUSE = new Vector2();
-
     // Create Raycaster
     this.#RAYCASTER = new Raycaster();
 
@@ -43,54 +41,38 @@ export default class CursorController {
     });
     this.#PLANE = new Mesh(GEOMETRY, MATERIAL);
     scene.add(this.#PLANE);
-
-    // Add Event Listeners
-    this.#CANVAS.addEventListener('mousemove', this.#onMouseMove.bind(this));
-    this.#CANVAS.addEventListener('mouseout', this.#onMouseOut.bind(this));
-  }
-
-  // ______________________________________________________________ Mouse Events
-
-  #onMouseMove(event: MouseEvent): void {
-    // Get Client Rectangle
-    const RECT = this.#CANVAS.getBoundingClientRect();
-
-    // Get Mouse Position
-    this.#POSITION_MOUSE.x = ((event.clientX - RECT.left) / RECT.width) * 2 - 1;
-    this.#POSITION_MOUSE.y =
-      -((event.clientY - RECT.top) / RECT.height) * 2 + 1;
-  }
-
-  #onMouseOut(): void {
-    this.#POSITION_MOUSE.x = 0;
-    this.#POSITION_MOUSE.y = 0;
   }
 
   // ______________________________________________________________________ Tick
 
   tick(): Vector2 {
-    // Update Raycaster from Mouse Position
-    this.#RAYCASTER.setFromCamera(
-      this.#POSITION_MOUSE,
-      this.#PERSPECTIVE_CAMERA,
-    );
+    // Get Cursor Position Px
+    const CURSOR_POSITION_PX = useUIStateStore.getState().cursorPositionPx;
 
-    // Raycast to plane
-    const intersects = this.#RAYCASTER.intersectObject(this.#PLANE);
+    console.log('CursorController.tick CURSOR_POSITION_PX', CURSOR_POSITION_PX);
 
-    const POSITION = new Vector2();
+    // Set Raycaster from Camera and Cursor Position Px
+    this.#RAYCASTER.setFromCamera(CURSOR_POSITION_PX, this.#PERSPECTIVE_CAMERA);
 
-    if (intersects.length > 0) {
-      const point = intersects[0].point;
-      POSITION.set(point.x, point.y);
+    // Raycast to Plane
+    const INTERSECTS = this.#RAYCASTER.intersectObject(this.#PLANE);
+
+    console.log('CursorController.tick INTERSECTS', INTERSECTS);
+
+    // Calculate Cursor Position 3D
+    const CURSOR_POSITION_3D = new Vector2();
+
+    if (INTERSECTS.length > 0) {
+      const point = INTERSECTS[0].point;
+      CURSOR_POSITION_3D.set(point.x, point.y);
     }
 
-    return POSITION;
+    return CURSOR_POSITION_3D;
   }
 
   // ___________________________________________________________________ Destroy
 
   destroy(): void {
-    this.#CANVAS.removeEventListener('mousemove', this.#onMouseMove);
+    // No event listeners to clean up
   }
 }

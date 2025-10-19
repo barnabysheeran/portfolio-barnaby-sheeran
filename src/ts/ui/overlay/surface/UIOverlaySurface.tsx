@@ -1,23 +1,13 @@
-import { useEffect } from 'react';
+import { Vector2 } from 'three';
 
 import { useUIStateStore } from '../../../store/uiState/uiStateStore';
 
-import { Vector2 } from 'three';
+const setCursorPositionPx = useUIStateStore.getState().setCursorPositionPx;
 
-export default function UIOverlaySurface() {
-  // ___________________________________________________________ Cursor Position
+function handleMouseMove(e: MouseEvent) {
+  // ________________________________________________________ Cursor Position Px
 
-  const setCursorPosition = useUIStateStore((state) => state.setCursorPosition);
-
-  useEffect(() => {
-    function handleMouseMove(e: MouseEvent) {
-      setCursorPosition(new Vector2(e.clientX, e.clientY));
-    }
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [setCursorPosition]);
-
-  // ____________________________________________________________________ Render
-
-  return <div></div>;
+  setCursorPositionPx(new Vector2(e.clientX, e.clientY));
 }
+
+window.addEventListener('mousemove', handleMouseMove);

@@ -7,9 +7,9 @@ import { type Theme, THEMES } from '../../types';
 
 interface UIState {
   theme: Theme;
-  cursorPosition: Vector2;
+  cursorPositionPx: Vector2;
   setTheme: (theme: Theme) => void;
-  setCursorPosition: (position: Vector2) => void;
+  setCursorPositionPx: (position: Vector2) => void;
 }
 
 export const useUIStateStore = create<UIState>()(
@@ -27,14 +27,12 @@ export const useUIStateStore = create<UIState>()(
         set({ theme });
       },
 
-      // _______________________________________________________ Cursor Position
+      // ____________________________________________________ Cursor Position Px
 
-      cursorPosition: new Vector2(0, 0),
+      cursorPositionPx: new Vector2(0, 0),
 
-      setCursorPosition: (position) => {
-        console.log('UIStateStore.setCursorPosition', position);
-
-        set({ cursorPosition: position });
+      setCursorPositionPx: (positionPx) => {
+        set({ cursorPositionPx: positionPx });
       },
     }),
 
