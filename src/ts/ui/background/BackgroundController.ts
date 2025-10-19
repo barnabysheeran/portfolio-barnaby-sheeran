@@ -15,8 +15,10 @@ export class BackgroundController {
   #CAMERA_CONTROLLER: CameraController;
   #RENDER_CONTROLLER: RenderController;
 
-  #width: number = 0;
-  #height: number = 0;
+  #width: number = -1;
+  #height: number = -1;
+  #windowX: number = -1;
+  #windowY: number = -1;
 
   #applicationRunTimeMS: number = 0;
 
@@ -61,10 +63,12 @@ export class BackgroundController {
     // Store
     this.#applicationRunTimeMS = applicationRunTimeMS;
 
-    // Resized ?
+    // Resized or Repositioned ?
     if (
       this.#width !== this.#CANVAS.clientWidth ||
-      this.#height !== this.#CANVAS.clientHeight
+      this.#height !== this.#CANVAS.clientHeight ||
+      this.#windowX !== window.screenX ||
+      this.#windowY !== window.screenY
     ) {
       this.#setSize(this.#CANVAS.clientWidth, this.#CANVAS.clientHeight);
     }
@@ -93,6 +97,8 @@ export class BackgroundController {
     // Store
     this.#width = width;
     this.#height = height;
+    this.#windowX = window.screenX;
+    this.#windowY = window.screenY;
   }
 
   // _____________________________________________________________________ Theme
@@ -110,6 +116,7 @@ export class BackgroundController {
       cancelAnimationFrame(this.#animationFrameId);
       this.#animationFrameId = null;
     }
+
     // Destroy Controllers
     this.#CONTENT_CONTROLLER.destroy();
     this.#LIGHT_CONTROLLER.destroy();
