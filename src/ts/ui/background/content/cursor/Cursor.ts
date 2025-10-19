@@ -1,15 +1,15 @@
 import {
   Scene,
   Group,
-  BoxGeometry,
+  SphereGeometry,
   MeshBasicMaterial,
   Mesh,
   Vector2,
+  OctahedronGeometry,
 } from 'three';
 
 export default class Cursor {
   #GROUP: Group;
-  #CUBE: Mesh;
 
   #POSITION_TARGET: Vector2;
   #POSITION_PREV: Vector2;
@@ -18,7 +18,7 @@ export default class Cursor {
   #VELOCITY_DECAY: number = 0.1;
   #VELOCITY_SCALE: number = 0.1;
 
-  #LERP_FACTOR: number = 0.1;
+  #LERP_FACTOR: number = 0.01;
 
   // ___________________________________________________________________________
 
@@ -32,14 +32,54 @@ export default class Cursor {
     this.#GROUP = new Group();
     scene.add(this.#GROUP);
 
-    // Create a simple cube
-    const geometry = new BoxGeometry(1, 1, 1);
-    const material = new MeshBasicMaterial({
+    // Create Sphere Material
+    const SPHERE_MATERIAL = new MeshBasicMaterial({
       color: 0xffffff,
-      wireframe: true,
     });
-    this.#CUBE = new Mesh(geometry, material);
-    this.#GROUP.add(this.#CUBE);
+
+    // Create Octahedron Geometry
+    const OCTAHEDRON_GEOMETRY = new OctahedronGeometry(0.2, 2);
+
+    // Create a Sphere at Vertex Positions
+    for (let i = 0; i < OCTAHEDRON_GEOMETRY.attributes.position.count; i++) {
+      const x = OCTAHEDRON_GEOMETRY.attributes.position.getX(i);
+      const y = OCTAHEDRON_GEOMETRY.attributes.position.getY(i);
+      const z = OCTAHEDRON_GEOMETRY.attributes.position.getZ(i);
+
+      const SPHERE_GEOMETRY = new SphereGeometry(0.01, 16, 16);
+      const sphere = new Mesh(SPHERE_GEOMETRY, SPHERE_MATERIAL);
+      sphere.position.set(x, y, z);
+      this.#GROUP.add(sphere);
+    }
+
+    // Get Vertex Positions
+    // const vertexPositions: Vector3[] = [];
+
+    // icosahedron.geometry.attributes.position.array.forEach((value, index) => {
+    //   if (index % 3 === 0) {
+    //     const x = value as number;
+    //     const y = icosahedron.geometry.attributes.position.array[
+    //       index + 1
+    //     ] as number;
+    //     const z = icosahedron.geometry.attributes.position.array[
+    //       index + 2
+    //     ] as number;
+    //     vertexPositions.push(new Vector3(x, y, z));
+    //   }
+    // });
+
+    // console.log('Icosahedron Vertex Positions:', vertexPositions);
+
+    // Create a Sphere at each vertex position of the icosahedron
+    // vertexPositions.forEach((position) => {
+    //   const SPHERE_GEOMETRY = new SphereGeometry(0.1, 16, 16);
+    //   const SPHERE_MATERIAL = new MeshBasicMaterial({
+    //     color: 0xff0000,
+    //   });
+    //   const sphere = new Mesh(SPHERE_GEOMETRY, SPHERE_MATERIAL);
+    //   sphere.position.copy(position);
+    //   this.#GROUP.add(sphere);
+    // });
   }
 
   // ______________________________________________________________________ Tick
@@ -55,9 +95,13 @@ export default class Cursor {
 
     // Lerp to Target Position
     this.#GROUP.position.x +=
-      (this.#POSITION_TARGET.x - this.#GROUP.position.x) * this.#LERP_FACTOR;
+      (this.#POSITION_TARGET.x - this.#GROUP.position.x) *
+      frameDeltaMS *
+      this.#LERP_FACTOR;
     this.#GROUP.position.y +=
-      (this.#POSITION_TARGET.y - this.#GROUP.position.y) * this.#LERP_FACTOR;
+      (this.#POSITION_TARGET.y - this.#GROUP.position.y) *
+      frameDeltaMS *
+      this.#LERP_FACTOR;
 
     // Add to Velocity
     this.#VELOCITY.x +=
@@ -66,8 +110,8 @@ export default class Cursor {
       (this.#GROUP.position.y - this.#POSITION_PREV.y) * frameDeltaMS;
 
     // Rotate from Velocity
-    this.#CUBE.rotation.x += this.#VELOCITY.y * this.#VELOCITY_SCALE;
-    this.#CUBE.rotation.y += this.#VELOCITY.x * this.#VELOCITY_SCALE;
+    this.#GROUP.rotation.x += this.#VELOCITY.y * this.#VELOCITY_SCALE;
+    this.#GROUP.rotation.y += this.#VELOCITY.x * this.#VELOCITY_SCALE;
 
     // Store
     this.#POSITION_PREV.x = this.#GROUP.position.x;
