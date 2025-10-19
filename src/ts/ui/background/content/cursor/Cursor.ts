@@ -18,7 +18,7 @@ export default class Cursor {
   #VELOCITY_DECAY: number = 0.1;
   #VELOCITY_SCALE: number = 0.1;
 
-  #LERP_FACTOR: number = 0.01;
+  #LERP_FACTOR: number = 5;
 
   // ___________________________________________________________________________
 
@@ -55,30 +55,35 @@ export default class Cursor {
 
   // ______________________________________________________________________ Tick
 
-  tick(frameDeltaMS: number, cursorPosition: Vector2): void {
+  tick(frameDeltaMS: number, cursorPosition3D: Vector2): void {
+    // Test - Set Position Directly
+    // this.#GROUP.position.x = cursorPosition3D.x;
+    // this.#GROUP.position.y = cursorPosition3D.y;
+
+    // console.log('Cursor.tick cursorPosition3D', cursorPosition3D);
+
+    const FRAME_DELTA_S = frameDeltaMS * 0.001; // convert ms to seconds
+
     // Set Target Position
-    this.#POSITION_TARGET.x = cursorPosition.x;
-    this.#POSITION_TARGET.y = cursorPosition.y;
+    this.#POSITION_TARGET.x = cursorPosition3D.x;
+    this.#POSITION_TARGET.y = cursorPosition3D.y;
 
-    // Decay Velocity
-    this.#VELOCITY.x *= this.#VELOCITY_DECAY;
-    this.#VELOCITY.y *= this.#VELOCITY_DECAY;
+    // Decay Velocity (frame-rate independent)
+    const decay = Math.exp(-this.#VELOCITY_DECAY * FRAME_DELTA_S);
+    this.#VELOCITY.x *= decay;
+    this.#VELOCITY.y *= decay;
 
-    // Lerp to Target Position
+    // Exponential Lerp to Target Position (frame-rate independent)
+    const lerpAlpha = 1 - Math.exp(-this.#LERP_FACTOR * FRAME_DELTA_S);
+
     this.#GROUP.position.x +=
-      (this.#POSITION_TARGET.x - this.#GROUP.position.x) *
-      frameDeltaMS *
-      this.#LERP_FACTOR;
+      (this.#POSITION_TARGET.x - this.#GROUP.position.x) * lerpAlpha;
     this.#GROUP.position.y +=
-      (this.#POSITION_TARGET.y - this.#GROUP.position.y) *
-      frameDeltaMS *
-      this.#LERP_FACTOR;
+      (this.#POSITION_TARGET.y - this.#GROUP.position.y) * lerpAlpha;
 
     // Add to Velocity
-    this.#VELOCITY.x +=
-      (this.#GROUP.position.x - this.#POSITION_PREV.x) * frameDeltaMS;
-    this.#VELOCITY.y +=
-      (this.#GROUP.position.y - this.#POSITION_PREV.y) * frameDeltaMS;
+    this.#VELOCITY.x += this.#GROUP.position.x - this.#POSITION_PREV.x;
+    this.#VELOCITY.y += this.#GROUP.position.y - this.#POSITION_PREV.y;
 
     // Rotate from Velocity
     this.#GROUP.rotation.x += this.#VELOCITY.y * this.#VELOCITY_SCALE;

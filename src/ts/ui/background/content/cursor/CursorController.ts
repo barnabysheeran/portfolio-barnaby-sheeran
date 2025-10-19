@@ -40,30 +40,45 @@ export default class CursorController {
       transparent: true,
     });
     this.#PLANE = new Mesh(GEOMETRY, MATERIAL);
+    this.#PLANE.name = 'CursorPlane';
     scene.add(this.#PLANE);
   }
 
   // ______________________________________________________________________ Tick
 
   tick(): Vector2 {
-    // Get Cursor Position Px
+    // Get Data from Store
     const CURSOR_POSITION_PX = useUIStateStore.getState().cursorPositionPx;
+    const SURFACE_SIZE_PX = useUIStateStore.getState().surfaceSizePx;
 
-    console.log('CursorController.tick CURSOR_POSITION_PX', CURSOR_POSITION_PX);
+    // console.log('CursorController.tick CURSOR_POSITION_PX', CURSOR_POSITION_PX);
+    // console.log('CursorController.tick SURFACE_SIZE_PX', SURFACE_SIZE_PX);
 
-    // Set Raycaster from Camera and Cursor Position Px
-    this.#RAYCASTER.setFromCamera(CURSOR_POSITION_PX, this.#PERSPECTIVE_CAMERA);
+    // Calculate Normalized Coordinates
+    const NORMALIZED_COORDINATES = new Vector2(
+      (CURSOR_POSITION_PX.x / SURFACE_SIZE_PX.x) * 2 - 1,
+      -(CURSOR_POSITION_PX.y / SURFACE_SIZE_PX.y) * 2 + 1,
+    );
+
+    // Set Raycaster
+    this.#RAYCASTER.setFromCamera(
+      NORMALIZED_COORDINATES,
+      this.#PERSPECTIVE_CAMERA,
+    );
 
     // Raycast to Plane
     const INTERSECTS = this.#RAYCASTER.intersectObject(this.#PLANE);
 
-    console.log('CursorController.tick INTERSECTS', INTERSECTS);
-
     // Calculate Cursor Position 3D
     const CURSOR_POSITION_3D = new Vector2();
 
-    if (INTERSECTS.length > 0) {
-      const point = INTERSECTS[0].point;
+    // Ensure intersection is with the plane
+    const planeIntersect = INTERSECTS.find(
+      (i) => i.object.name === 'CursorPlane',
+    );
+
+    if (planeIntersect) {
+      const point = planeIntersect.point;
       CURSOR_POSITION_3D.set(point.x, point.y);
     }
 

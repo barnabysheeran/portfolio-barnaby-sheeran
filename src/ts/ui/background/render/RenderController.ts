@@ -26,7 +26,7 @@ export default class RenderController {
   // ______________________________________________________________________ Size
 
   setSize(width: number, height: number): void {
-    this.#WEBGL_RENDERER.setSize(width, height, false);
+    this.#WEBGL_RENDERER.setSize(width, height, true);
   }
 
   // ___________________________________________________________________ Destroy

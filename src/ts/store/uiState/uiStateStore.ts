@@ -8,8 +8,10 @@ import { type Theme, THEMES } from '../../types';
 interface UIState {
   theme: Theme;
   cursorPositionPx: Vector2;
+  surfaceSizePx: Vector2;
   setTheme: (theme: Theme) => void;
   setCursorPositionPx: (position: Vector2) => void;
+  setSurfaceSizePx: (size: Vector2) => void;
 }
 
 export const useUIStateStore = create<UIState>()(
@@ -33,6 +35,14 @@ export const useUIStateStore = create<UIState>()(
 
       setCursorPositionPx: (positionPx) => {
         set({ cursorPositionPx: positionPx });
+      },
+
+      // _______________________________________________________ Surface Size Px
+
+      surfaceSizePx: new Vector2(0, 0),
+
+      setSurfaceSizePx: (sizePx) => {
+        set({ surfaceSizePx: sizePx });
       },
     }),
 
