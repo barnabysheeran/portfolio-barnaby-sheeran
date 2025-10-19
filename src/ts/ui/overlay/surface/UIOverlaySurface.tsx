@@ -17,6 +17,15 @@ function handleMouseMove(e: MouseEvent) {
 
 window.addEventListener('mousemove', handleMouseMove);
 
+function handleTouchMove(e: TouchEvent) {
+  if (e.touches.length > 0) {
+    lastClientX = e.touches[0].clientX;
+    lastClientY = e.touches[0].clientY;
+  }
+}
+
+window.addEventListener('touchmove', handleTouchMove, { passive: true });
+
 function updateLoop() {
   // Multiply by devicePixelRatio for physical pixels (DPI aware)
   const DEVICE_PIXEL_RATIO = window.devicePixelRatio || 1;

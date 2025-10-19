@@ -4,6 +4,7 @@ import ContentController from './content/ContentController';
 import LightController from './light/LightController';
 import CameraController from './camera/CameraController';
 import RenderController from './render/RenderController';
+import { useUIStateStore } from '../../store/uiState/uiStateStore';
 
 export class BackgroundController {
   #CANVAS: HTMLCanvasElement;
@@ -63,14 +64,17 @@ export class BackgroundController {
     // Store
     this.#applicationRunTimeMS = applicationRunTimeMS;
 
+    // Get Data from Store
+    const SURFACE_SIZE_PX = useUIStateStore.getState().surfaceSizePx;
+
     // Resized or Repositioned ?
     if (
-      this.#width !== this.#CANVAS.clientWidth ||
-      this.#height !== this.#CANVAS.clientHeight ||
+      this.#width !== SURFACE_SIZE_PX.x ||
+      this.#height !== SURFACE_SIZE_PX.y ||
       this.#windowX !== window.screenX ||
       this.#windowY !== window.screenY
     ) {
-      this.#setSize(this.#CANVAS.clientWidth, this.#CANVAS.clientHeight);
+      this.#setSize(SURFACE_SIZE_PX.x, SURFACE_SIZE_PX.y);
     }
 
     // Tick Controllers - Order Important - Render Last

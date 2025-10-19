@@ -37,7 +37,7 @@ export default class RenderController {
     this.#setDevicePixelRatio();
 
     // Set Size
-    this.#WEBGL_RENDERER.setSize(width, height, true);
+    this.#WEBGL_RENDERER.setSize(width, height, false);
   }
 
   // ___________________________________________________________________ Destroy
