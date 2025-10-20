@@ -27,6 +27,14 @@ export default class ContentController {
     this.#CURSOR.tick(frameDeltaMS, CURSOR_POSITION);
   }
 
+  // _____________________________________________________________________ Theme
+
+  setTheme(theme: string): void {
+    console.log('ContentController. setTheme', theme);
+
+    // TODO Update Scene Background on Theme Change
+  }
+
   // ___________________________________________________________________ Destroy
 
   destroy(): void {

@@ -107,9 +107,8 @@ export class BackgroundController {
   // _____________________________________________________________________ Theme
 
   setTheme(theme: string): void {
-    console.log('BackgroundController.setTheme', theme);
-
-    // TODO Update Scene Background on Theme Change
+    // Controllers
+    this.#CONTENT_CONTROLLER.setTheme(theme);
   }
 
   // ___________________________________________________________________ Destroy

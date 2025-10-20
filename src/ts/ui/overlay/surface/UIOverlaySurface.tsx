@@ -7,6 +7,8 @@ import { useUIStateStore } from '../../../store/uiState/uiStateStore';
 const setCursorPositionPx = useUIStateStore.getState().setCursorPositionPx;
 const setSurfaceSizePx = useUIStateStore.getState().setSurfaceSizePx;
 
+// ______________________________________________________________________ Events
+
 let lastClientX = 0;
 let lastClientY = 0;
 
@@ -25,6 +27,8 @@ function handleTouchMove(e: TouchEvent) {
 }
 
 window.addEventListener('touchmove', handleTouchMove, { passive: true });
+
+// ________________________________________________________________________ Loop
 
 function updateLoop() {
   // Multiply by devicePixelRatio for physical pixels (DPI aware)
@@ -45,5 +49,6 @@ function updateLoop() {
   requestAnimationFrame(updateLoop);
 }
 
-// Start the update loop
+// _____________________________________________________________ Initialise Loop
+
 updateLoop();
