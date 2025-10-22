@@ -16,7 +16,7 @@ export default class Cursor {
 
   #VELOCITY: Vector2;
   #VELOCITY_DECAY: number = 0.1;
-  #VELOCITY_SCALE: number = 0.1;
+  #VELOCITY_SCALE: number = 0.01;
 
   #LERP_FACTOR: number = 5;
 

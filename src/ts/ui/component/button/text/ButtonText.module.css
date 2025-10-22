@@ -1,0 +1,6 @@
+.button-text {
+    color: var(--colour-text);
+
+    pointer-events: auto;
+    cursor: pointer;
+}

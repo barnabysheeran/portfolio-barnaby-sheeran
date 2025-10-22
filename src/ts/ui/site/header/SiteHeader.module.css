@@ -11,4 +11,6 @@
     font-family: var(--font-headline);
     font-weight: 300;
     font-size: clamp(1.5rem, 6cqw, 2.5rem);
+
+    color: var(--colour-text);
 }
