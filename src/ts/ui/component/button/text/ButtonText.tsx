@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+
+import { DURATION_QUICK } from '../../../../motion/duration';
+import { EASE_DEFAULT } from '../../../../motion/ease';
+
 import styles from './ButtonText.module.css';
 
 type ButtonTextProps = {
@@ -36,7 +40,11 @@ export default function ButtonText({
           scaleX: hovered ? 1 : 0,
           transformOrigin: hovered ? 'left' : 'right',
         }}
-        transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+        transition={{
+          type: 'tween',
+          duration: DURATION_QUICK,
+          ease: EASE_DEFAULT,
+        }}
       />
     </a>
   );
