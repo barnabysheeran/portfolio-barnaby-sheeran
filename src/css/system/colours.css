@@ -5,14 +5,22 @@
   --color-black: rgba(0, 0, 0, 1);
 
   /* Light (Default) */
-  --background: var(--color-white);
-  --text: var(--color-black);
+  --colour-background: var(--color-white);
+  --colour-text: var(--color-black);
+
+  --colour-primary: rgba(0, 120, 215, 1);
+  --colour-secondary: rgba(32, 32, 32, 1);
+  --colour-tertiary: rgba(255, 255, 255, 1);
 }
 
 /* ____________________________________________________________________ Theme */
 
 .theme-dark {
   /* Dark */
-  --background: rgba(23, 21, 32, 1);
-  --text: var(--color-white);
+  --colour-background: rgba(23, 21, 32, 1);
+  --colour-text: var(--color-white);
+
+  --colour-primary: rgba(10, 132, 255, 1);
+  --colour-secondary: rgba(200, 200, 200, 1);
+  --colour-tertiary: rgba(32, 32, 32, 1);
 }

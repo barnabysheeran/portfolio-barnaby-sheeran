@@ -9,13 +9,13 @@
 }
 
 .scroll-progress .progress-ring-track {
-    stroke: rgba(255, 255, 255, 0.1);
+    stroke: var(--colour-tertiary);
 
     fill: transparent;
 }
 
 .scroll-progress .progress-ring-circle {
-    stroke: #3b82f6; /* Blue color */
+    stroke: var(--colour-primary);
     stroke-linecap: round;
     fill: transparent;
 }

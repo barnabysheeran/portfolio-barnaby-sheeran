@@ -11,9 +11,10 @@
     position: absolute;
     left: 0;
     bottom: -2px;
+
     width: 100%;
     height: 2px;
+    
     background: currentColor;
-    border-radius: 1px;
     pointer-events: none;
 }

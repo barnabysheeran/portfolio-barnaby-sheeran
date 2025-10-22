@@ -9,12 +9,12 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
-  color: var(--color-text-primary, #fff);
+  color: var(--color-text-primary);
 }
 
 .site-project-text__description {
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
-  color: var(--color-text-secondary, rgba(255, 255, 255, 0.8));
+  color: var(--color-text-secondary);
 }

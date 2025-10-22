@@ -55,15 +55,23 @@
         "media": [
             {
                 "type": "image",
-                "url": "asset/project/test/1.webp"
-            },
-            {
-                "type": "video",
-                "url": "asset/project/test/1.mp4"
+                "url": "asset/project/battlebuilder/1.avif"
             },
             {
                 "type": "image",
-                "url": "asset/project/test/2.webp"
+                "url": "asset/project/battlebuilder/2.avif"
+            },
+            {
+                "type": "image",
+                "url": "asset/project/battlebuilder/3.avif"
+            },
+            {
+                "type": "image",
+                "url": "asset/project/battlebuilder/4.avif"
+            },
+            {
+                "type": "image",
+                "url": "asset/project/battlebuilder/5.avif"
             }
         ]
     },
