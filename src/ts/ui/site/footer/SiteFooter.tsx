@@ -6,7 +6,7 @@ export default function SiteFooter() {
   return (
     <div className={styles['site-footer']}>
       <ButtonText
-        text="Creative Technology"
+        text="Creative Technologist Portfolio"
         url="https://www.barnabysheeran.com/ct"
       />
       <ButtonText text="GitHub" url="https://github.com/barnabysheeran" />
