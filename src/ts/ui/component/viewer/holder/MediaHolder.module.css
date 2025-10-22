@@ -23,6 +23,8 @@
 
   pointer-events: auto;
   cursor: pointer;
+
+  border-radius: var(--border-radius-small);
 }
 
 .media-video {
