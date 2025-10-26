@@ -20,6 +20,7 @@ export default function MediaViewer({ media }: MediaViewerProps) {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const prevIndex = useRef<number>(0);
+  const [loaded, setLoaded] = useState<{ [idx: number]: boolean }>({});
 
   // _____________________________________________________________________ Media
 
@@ -37,6 +38,10 @@ export default function MediaViewer({ media }: MediaViewerProps) {
     setCurrentIndex(index);
   };
 
+  const handleMediaLoaded = (idx: number) => {
+    setLoaded((prev) => ({ ...prev, [idx]: true }));
+  };
+
   // ____________________________________________________________________ Render
 
   return (
@@ -50,8 +55,8 @@ export default function MediaViewer({ media }: MediaViewerProps) {
             <motion.div
               key={idx}
               className={styles['media-item-holder']}
-              initial={{ opacity: idx === currentIndex ? 0 : 1 }}
-              animate={{ opacity: idx === currentIndex ? 1 : 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: loaded[idx] ? 1 : 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: DURATION_SLOW, ease: EASE_DEFAULT }}
             >
@@ -59,6 +64,7 @@ export default function MediaViewer({ media }: MediaViewerProps) {
                 media={item}
                 index={idx}
                 onClick={hasMultipleItems ? handleMediaClick : undefined}
+                onMediaLoaded={() => handleMediaLoaded(idx)}
               />
             </motion.div>
           ) : null,

@@ -1,14 +1,20 @@
-import type { MediaItem } from '../../../../types';
+import type { MediaItemData } from '../../../../types';
 
 import styles from './MediaItem.module.css';
 
 interface MediaItemProps {
-  media: MediaItem;
+  media: MediaItemData;
   index: number;
   onClick?: () => void;
+  onMediaLoaded?: () => void;
 }
 
-export default function MediaItem({ media, index, onClick }: MediaItemProps) {
+export default function MediaItem({
+  media,
+  index,
+  onClick,
+  onMediaLoaded,
+}: MediaItemProps) {
   // ____________________________________________________________________ Render
 
   return (
@@ -23,6 +29,7 @@ export default function MediaItem({ media, index, onClick }: MediaItemProps) {
           alt={`Project media ${index + 1}`}
           className={styles['media-image']}
           draggable={false}
+          onLoad={onMediaLoaded}
         />
       ) : (
         <video
@@ -30,6 +37,7 @@ export default function MediaItem({ media, index, onClick }: MediaItemProps) {
           controls
           className={styles['media-video']}
           aria-label={`Project video ${index + 1}`}
+          onLoadedData={onMediaLoaded}
         />
       )}
     </div>

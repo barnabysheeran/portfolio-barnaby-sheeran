@@ -4,7 +4,12 @@
     left: 0;
 
     width: 100%;
+    max-width: var(--bp-desktop);
     height: 100%;
+
+    margin: 0 auto;
+    padding-left: var(--ui-container-padding);
+    padding-right: var(--ui-container-padding);
 
     overflow: hidden;
 
