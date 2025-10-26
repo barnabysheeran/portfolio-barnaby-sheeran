@@ -20,10 +20,10 @@ export default function SiteProject({ projectData }: SiteProjectProps) {
   return (
     <motion.div
       className={`${styles['site-project']}`}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       transition={{ duration: DURATION_SLOW, ease: EASE_DEFAULT }}
-      viewport={{ once: true, margin: '-100px' }}
+      viewport={{ once: true }}
     >
       <SiteProjectText projectData={projectData} />
       <MediaViewer media={projectData.media} />
