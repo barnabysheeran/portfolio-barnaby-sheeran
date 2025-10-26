@@ -1,4 +1,11 @@
 .media-viewer {
+  width: calc(1920px * 0.5);
+  height: calc(1080px * 0.5);
+}
+
+.media-item-holder {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
 }

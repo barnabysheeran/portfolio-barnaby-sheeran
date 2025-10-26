@@ -19,23 +19,15 @@
 
     display: flex;
     flex-direction: column;
-    gap: calc(var(--grid-cell-width) * 3.0);
+    gap: calc(var(--grid-cell-height) * 3.0);
 }
 
 /* __________________________________________________________________ Desktop */
 
 @media (min-width: 768px) {
   .site-project {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: calc(var(--grid-cell-width) * 6.0);
-  }
-
-  .site-project > * {
-    flex: 1;
-  }
-
-  .site-project--reversed {
-    flex-direction: row-reverse;
+    gap: calc(var(--grid-cell-height) * 6.0);
   }
 }

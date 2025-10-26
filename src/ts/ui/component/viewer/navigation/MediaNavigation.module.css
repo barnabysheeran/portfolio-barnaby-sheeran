@@ -1,4 +1,6 @@
 .media-navigation {
+  position: relative;
+
   width: 100%;
   height: calc(var(--grid-cell-height) * 5);
 
@@ -29,6 +31,7 @@
 
 .navigation-dot--active {
   background-color: var(--colour-primary);
+  border: 2px solid var(--colour-secondary);
 }
 
 .navigation-dot:focus-visible {

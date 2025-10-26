@@ -1,5 +1,5 @@
-.media-holder {
-  position: relative;
+.media-item {
+  position: absolute;
   width: 100%;
   height: 100%;
 
@@ -10,7 +10,7 @@
   user-select: none;
 }
 
-.media-holder--disabled {
+.media-item--disabled {
   pointer-events: none;
 }
 

@@ -9,18 +9,14 @@ import styles from './SiteProject.module.css';
 
 interface SiteProjectProps {
   projectData: ProjectData;
-  isReversed?: boolean;
 }
 
-export default function SiteProject({
-  projectData,
-  isReversed = false,
-}: SiteProjectProps) {
+export default function SiteProject({ projectData }: SiteProjectProps) {
   // ____________________________________________________________________ Render
 
   return (
     <motion.div
-      className={`${styles['site-project']} ${isReversed ? styles['site-project--reversed'] : ''}`}
+      className={`${styles['site-project']}`}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}

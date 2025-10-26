@@ -5,7 +5,7 @@ export const MEDIA_TYPES = {
 
 export type MediaType = (typeof MEDIA_TYPES)[keyof typeof MEDIA_TYPES];
 
-export interface MediaItem {
+export interface MediaItemData {
   type: MediaType;
   url: string;
 }
@@ -14,5 +14,5 @@ export interface ProjectData {
   id: string;
   title: string;
   description: string;
-  media: MediaItem[];
+  media: MediaItemData[];
 }
