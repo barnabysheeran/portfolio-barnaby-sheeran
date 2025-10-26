@@ -27,9 +27,19 @@ export default function MediaViewer({ media }: MediaViewerProps) {
   const hasMultipleItems = media.length > 1;
 
   const handleMediaClick = () => {
+    console.log('Media clicked ' + currentIndex);
+
     if (hasMultipleItems) {
+      // Store Previous Index
       prevIndex.current = currentIndex;
-      setCurrentIndex((prev) => (prev + 1) % media.length);
+
+      // Calculate Next Index
+      let nextIndex = currentIndex + 1;
+      if (nextIndex >= media.length) nextIndex = 0;
+
+      console.log(' - Navigating to ' + nextIndex);
+
+      setCurrentIndex(nextIndex);
     }
   };
 
@@ -42,6 +52,16 @@ export default function MediaViewer({ media }: MediaViewerProps) {
     setLoaded((prev) => ({ ...prev, [idx]: true }));
   };
 
+  // ___________________________________________________________ Animation Props
+
+  const getMotionProps = (idx: number) => ({
+    className: styles['media-item-holder'],
+    initial: { opacity: 0 },
+    animate: { opacity: loaded[idx] ? 1 : 0 },
+    exit: { opacity: 0 },
+    transition: { duration: DURATION_SLOW, ease: EASE_DEFAULT },
+  });
+
   // ____________________________________________________________________ Render
 
   return (
@@ -50,24 +70,26 @@ export default function MediaViewer({ media }: MediaViewerProps) {
       style={{ position: 'relative', overflow: 'hidden' }}
     >
       <AnimatePresence>
-        {media.map((item, idx) =>
-          idx === currentIndex || idx === prevIndex.current ? (
-            <motion.div
-              key={idx}
-              className={styles['media-item-holder']}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: loaded[idx] ? 1 : 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: DURATION_SLOW, ease: EASE_DEFAULT }}
-            >
+        {currentIndex === prevIndex.current ? (
+          <motion.div key={currentIndex} {...getMotionProps(currentIndex)}>
+            <MediaItem
+              media={media[currentIndex]}
+              index={currentIndex}
+              onClick={hasMultipleItems ? handleMediaClick : undefined}
+              onMediaLoaded={() => handleMediaLoaded(currentIndex)}
+            />
+          </motion.div>
+        ) : (
+          [prevIndex.current, currentIndex].map((idx) => (
+            <motion.div key={idx} {...getMotionProps(idx)}>
               <MediaItem
-                media={item}
+                media={media[idx]}
                 index={idx}
                 onClick={hasMultipleItems ? handleMediaClick : undefined}
                 onMediaLoaded={() => handleMediaLoaded(idx)}
               />
             </motion.div>
-          ) : null,
+          ))
         )}
       </AnimatePresence>
       <MediaNavigation

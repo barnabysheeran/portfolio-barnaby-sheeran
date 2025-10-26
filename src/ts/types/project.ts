@@ -10,9 +10,15 @@ export interface MediaItemData {
   url: string;
 }
 
+export interface ProjectLinkData {
+  label: string;
+  url: string;
+}
+
 export interface ProjectData {
   id: string;
   title: string;
   description: string;
   media: MediaItemData[];
+  links?: ProjectLinkData[];
 }

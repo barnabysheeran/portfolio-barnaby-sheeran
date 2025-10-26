@@ -73,32 +73,18 @@
                 "type": "image",
                 "url": "asset/project/battlebuilder/5.avif"
             }
-        ]
-    },
-
-    {
-        "id": "5",
-        "title": "PostMatter",
-        "description": "This is a sample project description.",
-        "media": [
+        ],
+        "links": [
             {
-                "type": "image",
-                "url": "asset/project/test/1.webp"
-            },
-            {
-                "type": "video",
-                "url": "asset/project/test/1.mp4"
-            },
-            {
-                "type": "image",
-                "url": "asset/project/test/2.webp"
+                "label": "BattleBuilder.net",
+                "url": "https://battlebuilder.net"
             }
         ]
     },
 
     {
-        "id": "6",
-        "title": "Ferrari - Flagship Store",
+        "id": "5",
+        "title": "These Beautiful Lies",
         "description": "This is a sample project description.",
         "media": [
             {

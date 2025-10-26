@@ -6,7 +6,7 @@
     "preview": "vite preview",
     "dev": "vite",
     "lint": "npm run lint:tsc && npm run lint:eslint && npm run lint:stylelint",
-    "lint:tsc": "tsc --noEmit --pretty false",
+    "lint:tsc": "tsc --noEmit --pretty false --project tsconfig.app.json",
     "lint:eslint": "eslint .",
     "lint:stylelint": "stylelint \"src/**/*.css\"",
     "build": "tsc -b && vite build",

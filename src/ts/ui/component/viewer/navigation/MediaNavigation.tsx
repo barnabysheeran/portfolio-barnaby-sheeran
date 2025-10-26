@@ -1,9 +1,9 @@
-import type { MediaItem } from '../../../../types';
+import type { MediaItemData } from '../../../../types';
 
 import styles from './MediaNavigation.module.css';
 
 interface MediaNavigationProps {
-  media: MediaItem[];
+  media: MediaItemData[];
   currentIndex: number;
   onNavigate: (index: number) => void;
 }
