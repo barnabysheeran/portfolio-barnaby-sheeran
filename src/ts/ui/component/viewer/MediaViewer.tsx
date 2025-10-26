@@ -27,8 +27,6 @@ export default function MediaViewer({ media }: MediaViewerProps) {
   const hasMultipleItems = media.length > 1;
 
   const handleMediaClick = () => {
-    console.log('Media clicked ' + currentIndex);
-
     if (hasMultipleItems) {
       // Store Previous Index
       prevIndex.current = currentIndex;
@@ -36,8 +34,6 @@ export default function MediaViewer({ media }: MediaViewerProps) {
       // Calculate Next Index
       let nextIndex = currentIndex + 1;
       if (nextIndex >= media.length) nextIndex = 0;
-
-      console.log(' - Navigating to ' + nextIndex);
 
       setCurrentIndex(nextIndex);
     }

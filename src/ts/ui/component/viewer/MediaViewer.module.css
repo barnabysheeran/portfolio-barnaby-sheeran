@@ -1,6 +1,9 @@
 .media-viewer {
-  width: calc(1920px * 0.5);
-  height: calc(1080px * 0.5);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  position: relative;
+  overflow: hidden;
 }
 
 .media-item-holder {
