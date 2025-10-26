@@ -61,38 +61,40 @@ export default function MediaViewer({ media }: MediaViewerProps) {
   // ____________________________________________________________________ Render
 
   return (
-    <div
-      className={styles['media-viewer']}
-      style={{ position: 'relative', overflow: 'hidden' }}
-    >
-      <AnimatePresence>
-        {currentIndex === prevIndex.current ? (
-          <motion.div key={currentIndex} {...getMotionProps(currentIndex)}>
-            <MediaItem
-              media={media[currentIndex]}
-              index={currentIndex}
-              onClick={hasMultipleItems ? handleMediaClick : undefined}
-              onMediaLoaded={() => handleMediaLoaded(currentIndex)}
-            />
-          </motion.div>
-        ) : (
-          [prevIndex.current, currentIndex].map((idx) => (
-            <motion.div key={idx} {...getMotionProps(idx)}>
+    <>
+      <div
+        className={styles['media-viewer']}
+        style={{ position: 'relative', overflow: 'hidden' }}
+      >
+        <AnimatePresence>
+          {currentIndex === prevIndex.current ? (
+            <motion.div key={currentIndex} {...getMotionProps(currentIndex)}>
               <MediaItem
-                media={media[idx]}
-                index={idx}
+                media={media[currentIndex]}
+                index={currentIndex}
                 onClick={hasMultipleItems ? handleMediaClick : undefined}
-                onMediaLoaded={() => handleMediaLoaded(idx)}
+                onMediaLoaded={() => handleMediaLoaded(currentIndex)}
               />
             </motion.div>
-          ))
-        )}
-      </AnimatePresence>
+          ) : (
+            [prevIndex.current, currentIndex].map((idx) => (
+              <motion.div key={idx} {...getMotionProps(idx)}>
+                <MediaItem
+                  media={media[idx]}
+                  index={idx}
+                  onClick={hasMultipleItems ? handleMediaClick : undefined}
+                  onMediaLoaded={() => handleMediaLoaded(idx)}
+                />
+              </motion.div>
+            ))
+          )}
+        </AnimatePresence>
+      </div>
       <MediaNavigation
         media={media}
         currentIndex={currentIndex}
         onNavigate={handleNavigate}
       />
-    </div>
+    </>
   );
 }
