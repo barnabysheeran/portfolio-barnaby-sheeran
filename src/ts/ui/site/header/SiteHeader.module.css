@@ -1,16 +1,17 @@
 .site-header {
-    height: calc(var(--grid-cell-height) * 18.0);
     width: 100%;
-    display: flex;
 
-    justify-content: center;
-    container-type: inline-size;
+    padding-top: calc(var(--grid-cell-height) * 8.0);
+    padding-bottom: calc(var(--grid-cell-height) * 2.0);
 }
 
 .site-header .title {
+    padding-left: calc(var(--grid-cell-width) * 12.0);
+    padding-right: calc(var(--grid-cell-width) * 12.0);
+
     font-family: var(--font-headline);
     font-weight: 300;
-    font-size: clamp(1.5rem, 6cqw, 2.5rem);
+    font-size: 1.8rem;
 
     color: var(--colour-text);
 }
