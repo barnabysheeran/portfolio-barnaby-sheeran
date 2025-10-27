@@ -1,11 +1,7 @@
-import { useEffect, useRef } from 'react';
 import { Sun, Moon } from 'lucide-react';
-import { motion, useAnimationControls } from 'framer-motion';
 
 import { useUIStateStore } from '../../../../store/uiState/uiStateStore';
 import { THEMES } from '../../../../types';
-
-import ThemeSwitcherAnimator from './ThemeSwitcherAnimator';
 
 import styles from './ThemeSwitcher.module.css';
 
@@ -13,9 +9,6 @@ export default function ThemeSwitcher() {
   // _____________________________________________________________________ State
 
   const { theme, setTheme } = useUIStateStore();
-  const animationControls = useAnimationControls();
-  const animatorRef = useRef<ThemeSwitcherAnimator | null>(null);
-  const controlsRef = useRef(animationControls);
 
   // _____________________________________________________________________ Theme
 
@@ -23,31 +16,10 @@ export default function ThemeSwitcher() {
     setTheme(theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT);
   };
 
-  // _________________________________________________________________ Animation
-
-  // Keep the ref updated
-  useEffect(() => {
-    controlsRef.current = animationControls;
-  }, [animationControls]);
-
-  useEffect(() => {
-    // Pass the controls to the animator instance
-    animatorRef.current = new ThemeSwitcherAnimator(controlsRef.current);
-
-    return () => {
-      animatorRef.current?.destroy();
-      animatorRef.current = null;
-    };
-  }, []);
-
   // ____________________________________________________________________ Render
 
   return (
-    <div
-      className={styles['theme-switcher']}
-      onMouseEnter={() => animatorRef.current?.onRollOver()}
-      onMouseLeave={() => animatorRef.current?.onRollOut()}
-    >
+    <div className={styles['theme-switcher']}>
       {/* Invisible Button - Interaction */}
       <button
         className={styles['invisible-button']}

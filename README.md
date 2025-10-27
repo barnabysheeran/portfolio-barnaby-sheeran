@@ -1,6 +1,6 @@
 ### Portfolio Barnaby Sheeran
 
-Vite - React - Typescript (strict) - CSS Modules - Zustand - Three - WebGL  
+Vite - React - Typescript (strict) - CSS Modules - Zustand  
   
 Work in Progress  
 
@@ -18,6 +18,8 @@ Work in Progress
 
 `npm run todo` - Lists TODO in /src  
 
+### _
+
 `npm run depcruise` - Updates tool/depcruise/dependencygraph.svg (requires GraphViz `dot`)  
 
-### _
+![Dependencygraph](tool/depcruise/dependencygraph.svg)
