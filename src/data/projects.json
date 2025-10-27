@@ -2,7 +2,7 @@
 
     {
         "id": "1",
-        "title": "Onfigr - 1",
+        "title": "Onfigr",
         "description": "This is a sample project description.",
         "media": [
             {
@@ -14,7 +14,7 @@
 
     {
         "id": "2",
-        "title": "Onfigr - 2",
+        "title": "Pikcells",
         "description": "This is a sample project description.",
         "media": [
             {
@@ -30,26 +30,6 @@
 
     {
         "id": "3",
-        "title": "Onfigr - 3",
-        "description": "This is a sample project description.",
-        "media": [
-            {
-                "type": "image",
-                "url": "asset/project/dev/1.avif"
-            },
-            {
-                "type": "video",
-                "url": "asset/project/dev/1.mp4"
-            },
-            {
-                "type": "image",
-                "url": "asset/project/dev/2.avif"
-            }
-        ]
-    },
-
-    {
-        "id": "4",
         "title": "BattleBuilder",
         "description": "This is a sample project description.",
         "media": [
@@ -83,21 +63,17 @@
     },
 
     {
-        "id": "5",
+        "id": "4",
         "title": "These Beautiful Lies",
         "description": "This is a sample project description.",
         "media": [
             {
                 "type": "image",
-                "url": "asset/project/ferrari/1.avif"
+                "url": "asset/project/lies/1.avif"
             },
             {
                 "type": "image",
-                "url": "asset/project/ferrari/2.avif"
-            },
-            {
-                "type": "image",
-                "url": "asset/project/ferrari/3.avif"
+                "url": "asset/project/lies/2.avif"
             }
         ]
     }
