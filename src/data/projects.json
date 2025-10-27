@@ -7,7 +7,7 @@
         "media": [
             {
                 "type": "image",
-                "url": "asset/project/dev/1.avif"
+                "url": "assets/project/dev/1.avif"
             }
         ]
     },
@@ -19,11 +19,11 @@
         "media": [
             {
                 "type": "image",
-                "url": "asset/project/dev/1.avif"
+                "url": "assets/project/dev/1.avif"
             },
             {
                 "type": "image",
-                "url": "asset/project/dev/2.avif"
+                "url": "assets/project/dev/2.avif"
             }
         ]
     },
@@ -35,23 +35,23 @@
         "media": [
             {
                 "type": "image",
-                "url": "asset/project/battlebuilder/1.avif"
+                "url": "assets/project/battlebuilder/1.avif"
             },
             {
                 "type": "image",
-                "url": "asset/project/battlebuilder/2.avif"
+                "url": "assets/project/battlebuilder/2.avif"
             },
             {
                 "type": "image",
-                "url": "asset/project/battlebuilder/3.avif"
+                "url": "assets/project/battlebuilder/3.avif"
             },
             {
                 "type": "image",
-                "url": "asset/project/battlebuilder/4.avif"
+                "url": "assets/project/battlebuilder/4.avif"
             },
             {
                 "type": "image",
-                "url": "asset/project/battlebuilder/5.avif"
+                "url": "assets/project/battlebuilder/5.avif"
             }
         ],
         "links": [
@@ -69,11 +69,11 @@
         "media": [
             {
                 "type": "image",
-                "url": "asset/project/lies/1.avif"
+                "url": "assets/project/lies/1.avif"
             },
             {
                 "type": "image",
-                "url": "asset/project/lies/2.avif"
+                "url": "assets/project/lies/2.avif"
             }
         ]
     }

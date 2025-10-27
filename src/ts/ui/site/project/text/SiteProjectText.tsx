@@ -23,7 +23,7 @@ export default function SiteProjectText({ projectData }: SiteProjectTextProps) {
           {projectData.links.map((link) => (
             <ButtonText
               key={link.url}
-              text={link.label}
+              text={'/ ' + link.label}
               url={link.url}
               target="_blank"
             />

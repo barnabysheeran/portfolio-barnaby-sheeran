@@ -36,7 +36,7 @@
 
 @font-face {
   font-family: 'MuseoModerno';
-  src: url('./asset/font/museo-moderno/MuseoModerno-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/font/museo-moderno/MuseoModerno-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -44,7 +44,7 @@
 
 @font-face {
   font-family: 'Inter';
-  src: url('./asset/font/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  src: url('/assets/font/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
