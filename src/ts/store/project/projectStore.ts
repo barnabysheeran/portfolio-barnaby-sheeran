@@ -2,7 +2,7 @@ import { create } from 'zustand';
 
 import { type ProjectData } from '../../types/project';
 
-import projectsData from '../../data/projects.json';
+import projectsData from '../../../data/projects.json';
 
 interface ProjectStore {
   projects: ProjectData[];

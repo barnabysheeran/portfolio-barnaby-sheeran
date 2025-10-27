@@ -2,19 +2,19 @@
 
     {
         "id": "1",
-        "title": "Onfigr - 1",
+        "title": "Onfigr",
         "description": "This is a sample project description.",
         "media": [
             {
                 "type": "image",
-                "url": "asset/project/dev/1.avif"
+                "url": "asset/project/onfigr/1.avif"
             }
         ]
     },
 
     {
         "id": "2",
-        "title": "Onfigr - 2",
+        "title": "Pikcells",
         "description": "This is a sample project description.",
         "media": [
             {
