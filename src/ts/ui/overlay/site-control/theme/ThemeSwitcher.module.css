@@ -1,8 +1,10 @@
 .theme-switcher {
     position: absolute;
+    top: 0;
+    left: 0;
 
-    width: calc(var(--grid-cell-width) * 2);
-    height: calc(var(--grid-cell-width) * 2);
+    width: calc(var(--grid-cell-width) * 3);
+    height: calc(var(--grid-cell-height) * 3);
 
     transform: translate(-50%, -50%);
 }
@@ -13,6 +15,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 3;
+
     width: 100%;
     height: 100%;
 
@@ -24,48 +28,40 @@
 
     pointer-events: auto;
     cursor: pointer;
-
-    z-index: 3;
 }
 
 .invisible-button:focus-visible {
-    outline: 2px solid var(--color-accent, #007acc);
+    outline: 2px solid var(--colour-secondary);
     outline-offset: 2px;
 }
-
 
 /* ____________________________________________________________________ Icons */
 
 .icon-layer {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    top: 0;
+    left: 0;
     z-index: 2;
-    pointer-events: none;
-}
-
-.icon-layer.active {
-    opacity: 1;
 }
 
 .sun-icon {
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.moon-icon {
-    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transform: translate(-50%, -50%);
 }
 
 .sun-icon.active {
-    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.moon-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%);
 }
 
 .moon-icon.active {
-    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transform: translate(-50%, -50%);
 }
 
 /* _______________________________________________________________ Background */
@@ -76,7 +72,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-surface-tertiary);
+    background: var(--colour-surface-tertiary);
     border-radius: 50%;
     backdrop-filter: blur(8px);
     transition: background 0.3s ease, transform 0.2s ease;

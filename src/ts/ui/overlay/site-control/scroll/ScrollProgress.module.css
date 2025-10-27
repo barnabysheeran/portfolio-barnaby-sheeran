@@ -1,4 +1,11 @@
 .scroll-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: calc(var(--grid-cell-width) * 4);
+    height: calc(var(--grid-cell-height) * 4);
+
     transform: translate(-50%, -50%);
 }
 

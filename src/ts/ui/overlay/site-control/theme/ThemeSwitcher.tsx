@@ -48,26 +48,26 @@ export default function ThemeSwitcher() {
       onMouseEnter={() => animatorRef.current?.onRollOver()}
       onMouseLeave={() => animatorRef.current?.onRollOut()}
     >
-      {/* Invisible Button Layer - Top layer for interaction */}
+      {/* Invisible Button - Interaction */}
       <button
         className={styles['invisible-button']}
         onClick={handleThemeToggle}
         aria-label={`Switch to ${theme === THEMES.LIGHT ? 'Dark' : 'Light'} theme`}
       />
 
-      {/* Icon Layer 1 - Sun (Light Theme) */}
+      {/* Sun */}
       <div
         className={`${styles['icon-layer']} ${styles['sun-icon']} ${
-          theme === THEMES.LIGHT ? styles['active'] : ''
+          theme === THEMES.DARK ? styles['active'] : ''
         }`}
       >
         <Sun />
       </div>
 
-      {/* Icon Layer 2 - Moon (Dark Theme) */}
+      {/* Moon */}
       <div
         className={`${styles['icon-layer']} ${styles['moon-icon']} ${
-          theme === THEMES.DARK ? styles['active'] : ''
+          theme === THEMES.LIGHT ? styles['active'] : ''
         }`}
       >
         <Moon />

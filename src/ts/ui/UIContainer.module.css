@@ -4,11 +4,11 @@
   width: 100%;
   max-width: var(--bp-desktop);
 
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 
   margin: 0 auto;
-  padding-left: var(--ui-container-padding);
-  padding-right: var(--ui-container-padding);
+  /* padding-left: var(--ui-container-padding);
+  padding-right: var(--ui-container-padding); */
 
   z-index: var(--z-ui);
 }

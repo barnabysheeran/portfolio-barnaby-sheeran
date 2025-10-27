@@ -21,13 +21,3 @@
     flex-direction: column;
     gap: calc(var(--grid-cell-height) * 3.0);
 }
-
-/* __________________________________________________________________ Desktop */
-
-@media (min-width: 768px) {
-  .site-project {
-    flex-direction: column;
-    align-items: center;
-    gap: calc(var(--grid-cell-height) * 6.0);
-  }
-}

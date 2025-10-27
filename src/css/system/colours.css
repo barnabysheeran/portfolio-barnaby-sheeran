@@ -1,12 +1,12 @@
 :root {
   /* Base Colors */
-  --color-white: rgba(255, 255, 255, 1);
-  --color-grey: rgba(128, 128, 128, 1);
-  --color-black: rgba(0, 0, 0, 1);
+  --colour-white: rgba(255, 255, 255, 1);
+  --colour-grey: rgba(128, 128, 128, 1);
+  --colour-black: rgba(0, 0, 0, 1);
 
   /* Light (Default) */
-  --colour-background: var(--color-white);
-  --colour-text: var(--color-black);
+  --colour-background: var(--colour-white);
+  --colour-text: var(--colour-black);
 
   --colour-primary: rgba(0, 120, 215, 1);
   --colour-secondary: rgba(32, 32, 32, 1);
@@ -18,7 +18,7 @@
 .theme-dark {
   /* Dark */
   --colour-background: rgba(23, 21, 32, 1);
-  --colour-text: var(--color-white);
+  --colour-text: var(--colour-white);
 
   --colour-primary: rgba(10, 132, 255, 1);
   --colour-secondary: rgba(200, 200, 200, 1);
