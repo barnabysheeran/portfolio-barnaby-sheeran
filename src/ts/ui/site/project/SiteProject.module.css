@@ -1,6 +1,5 @@
 .site-project {
     width: 100%;
-    min-height: calc(var(--grid-cell-height) * 32.0);
 
     background-color: var(--colour-tertiary);
     backdrop-filter: blur(1rem);
@@ -16,8 +15,4 @@
     padding-bottom: calc(var(--grid-cell-height) * 2.0);
 
     margin-bottom: calc(var(--grid-cell-height) * 3.0);
-
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--grid-cell-height) * 3.0);
 }
