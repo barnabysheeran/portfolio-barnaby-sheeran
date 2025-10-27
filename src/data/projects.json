@@ -69,15 +69,11 @@
         "media": [
             {
                 "type": "image",
-                "url": "asset/project/ferrari/1.avif"
+                "url": "asset/project/lies/1.avif"
             },
             {
                 "type": "image",
-                "url": "asset/project/ferrari/2.avif"
-            },
-            {
-                "type": "image",
-                "url": "asset/project/ferrari/3.avif"
+                "url": "asset/project/lies/2.avif"
             }
         ]
     }
