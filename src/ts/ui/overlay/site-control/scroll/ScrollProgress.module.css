@@ -2,9 +2,10 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 6;
 
-    width: calc(var(--grid-cell-width) * 4);
-    height: calc(var(--grid-cell-height) * 4);
+    width: calc(var(--grid-cell-width) * 7);
+    height: calc(var(--grid-cell-height) * 7);
 
     transform: translate(-50%, -50%);
 }
@@ -17,7 +18,6 @@
 
 .scroll-progress .progress-ring-track {
     stroke: var(--colour-tertiary);
-
     fill: transparent;
 }
 

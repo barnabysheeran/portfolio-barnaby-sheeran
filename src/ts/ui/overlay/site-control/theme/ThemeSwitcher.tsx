@@ -57,7 +57,7 @@ export default function ThemeSwitcher() {
 
       {/* Sun */}
       <div
-        className={`${styles['icon-layer']} ${styles['sun-icon']} ${
+        className={`${styles['icon']} ${styles['sun-icon']} ${
           theme === THEMES.DARK ? styles['active'] : ''
         }`}
       >
@@ -66,19 +66,15 @@ export default function ThemeSwitcher() {
 
       {/* Moon */}
       <div
-        className={`${styles['icon-layer']} ${styles['moon-icon']} ${
+        className={`${styles['icon']} ${styles['moon-icon']} ${
           theme === THEMES.LIGHT ? styles['active'] : ''
         }`}
       >
         <Moon />
       </div>
 
-      {/* Background Layer - Now a motion component */}
-      <motion.div
-        className={styles['background-layer']}
-        animate={animationControls}
-        initial={{ scale: 1 }}
-      />
+      {/* Background Blur */}
+      <div className={styles['background-blur']}></div>
     </div>
   );
 }

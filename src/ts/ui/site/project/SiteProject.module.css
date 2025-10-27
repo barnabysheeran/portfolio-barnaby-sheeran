@@ -1,18 +1,24 @@
 .site-project {
     width: 100%;
 
-    background-color: var(--colour-tertiary);
-    backdrop-filter: blur(1rem);
-    -webkit-backdrop-filter: blur(1rem);
-
     border-radius: var(--border-radius-small);
 
     box-sizing: border-box;
 
-    padding-left: calc(var(--grid-cell-width) * 2.0);
-    padding-right: calc(var(--grid-cell-width) * 2.0);
-    padding-top: calc(var(--grid-cell-height) * 2.0);
-    padding-bottom: calc(var(--grid-cell-height) * 2.0);
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 
     margin-bottom: calc(var(--grid-cell-height) * 3.0);
+}
+
+
+/* __________________________________________________________________ Desktop */
+
+@media (min-width: 768px) {
+  .site-project {
+    padding-left: calc(var(--grid-cell-width) * 4.0);
+    padding-right: calc(var(--grid-cell-width) * 4.0);
+  }
 }

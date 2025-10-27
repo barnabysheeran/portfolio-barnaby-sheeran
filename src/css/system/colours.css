@@ -11,6 +11,8 @@
   --colour-primary: rgba(0, 120, 215, 1);
   --colour-secondary: rgba(32, 32, 32, 1);
   --colour-tertiary: rgba(255, 255, 255, 1);
+
+  --colour-blur: rgba(255, 255, 255, 0.15);
 }
 
 /* ____________________________________________________________________ Theme */
@@ -23,4 +25,6 @@
   --colour-primary: rgba(10, 132, 255, 1);
   --colour-secondary: rgba(200, 200, 200, 1);
   --colour-tertiary: rgba(32, 32, 32, 1);
+
+  --colour-blur: rgba(0, 0, 0, 0.15);
 }
