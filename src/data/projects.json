@@ -30,26 +30,6 @@
 
     {
         "id": "3",
-        "title": "Onfigr - 3",
-        "description": "This is a sample project description.",
-        "media": [
-            {
-                "type": "image",
-                "url": "asset/project/dev/1.avif"
-            },
-            {
-                "type": "video",
-                "url": "asset/project/dev/1.mp4"
-            },
-            {
-                "type": "image",
-                "url": "asset/project/dev/2.avif"
-            }
-        ]
-    },
-
-    {
-        "id": "4",
         "title": "BattleBuilder",
         "description": "This is a sample project description.",
         "media": [
@@ -83,7 +63,7 @@
     },
 
     {
-        "id": "5",
+        "id": "4",
         "title": "These Beautiful Lies",
         "description": "This is a sample project description.",
         "media": [
