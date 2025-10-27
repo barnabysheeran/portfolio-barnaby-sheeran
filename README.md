@@ -1,6 +1,6 @@
 ### Portfolio Barnaby Sheeran
 
-Vite - React - Typescript (strict) - CSS Modules - Zustand  
+Vite - React - Typescript (strict) - Zustand - CSS Modules  
   
 Work in Progress  
 
