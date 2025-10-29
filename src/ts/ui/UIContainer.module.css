@@ -2,7 +2,7 @@
   position: relative;
 
   width: 100%;
-  max-width: var(--bp-desktop);
+  max-width: var(--bp-tablet);
 
   margin: 0 auto;
 
