@@ -45,7 +45,7 @@
 @media (min-width: 768px) {
   .details-row {
     flex-direction: row;
-    gap: calc(var(--grid-cell-width) * 6.0);
+    /* gap: calc(var(--grid-cell-width) * 6.0); */
   }
 }
 
@@ -69,16 +69,4 @@
   width: 100%;
 
   background: #eeeeee;
-}
-
-/* __________________________________________________________________ Desktop */
-
-@media (min-width: 768px) {
-  .site-project-text {
-    gap: calc(var(--grid-cell-width) * 6.0);
-  }
-
-  .details-row {
-    flex-direction: row;
-  }
 }

@@ -12,7 +12,7 @@ export default function SiteProjectText({ projectData }: SiteProjectTextProps) {
 
   return (
     <div className={styles['site-project-text']}>
-      {/* Title - Optional */}
+      {/* Title Row- Optional */}
       {projectData.title && (
         <div className={styles['row-title']}>
           <p className={styles['title']}>{projectData.title}</p>
@@ -36,7 +36,7 @@ export default function SiteProjectText({ projectData }: SiteProjectTextProps) {
           ))}
       </div>
 
-      {/* Links - Optional */}
+      {/* Links Row - Optional */}
       {projectData.links && projectData.links.length > 0 && (
         <div className={styles['links-row']}>
           {projectData.links.map((link) => (
