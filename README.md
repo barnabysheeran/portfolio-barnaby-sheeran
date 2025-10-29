@@ -4,6 +4,8 @@ Vite - React - Typescript (strict) - Zustand - CSS Modules
   
 Work in Progress  
 
+Deploys to [https://barnabysheeran.com/staging](https://barnabysheeran.com/staging)   
+
 ### _
 
 `npm install` - Installs dependancies - tested: node 22.20.0 npm 11.6.1  
