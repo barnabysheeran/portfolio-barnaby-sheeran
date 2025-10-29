@@ -35,7 +35,7 @@
 
     {
         "id": "3",
-        "title": "Co-Founded and Developed an Online Ecommerce Platform for Tabletop Gamers",
+        "title": "Co-Founded and Developed an Online Ecommerce Company",
         "company": "BattleBuilder",
         "description": [
             "Development - Launch - Maintenance"
@@ -43,19 +43,11 @@
         "media": [
             {
                 "type": "image",
-                "url": "assets/project/battlebuilder/1.avif"
-            },
-            {
-                "type": "image",
                 "url": "assets/project/battlebuilder/2.avif"
             },
             {
                 "type": "image",
                 "url": "assets/project/battlebuilder/3.avif"
-            },
-            {
-                "type": "image",
-                "url": "assets/project/battlebuilder/4.avif"
             },
             {
                 "type": "image",
@@ -72,7 +64,7 @@
 
     {
         "id": "4",
-        "title": "These Beautiful Lies",
+        "title": "Freelance Creative Technologist",
         "company": "These Beautiful Lies",
         "description": [
             ""

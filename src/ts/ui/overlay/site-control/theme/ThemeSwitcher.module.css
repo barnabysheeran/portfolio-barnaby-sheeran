@@ -47,7 +47,7 @@
 .sun-icon {
     opacity: 0;
     color: var(--colour-primary);
-    transform: translate(50%, 40%);
+    transform: translate(50%, 39%);
 }
 
 .sun-icon.active {
@@ -57,7 +57,7 @@
 .moon-icon {
     opacity: 0;
     color: var(--colour-primary);
-    transform: translate(50%, 40%);
+    transform: translate(50%, 38%);
 }
 
 .moon-icon.active {

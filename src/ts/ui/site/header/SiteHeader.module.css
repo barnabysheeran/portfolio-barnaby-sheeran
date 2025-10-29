@@ -9,9 +9,5 @@
     padding-left: calc(var(--grid-cell-width) * 9.0);
     padding-right: calc(var(--grid-cell-width) * 3.0);
 
-    font-family: var(--font-headline);
-    font-weight: 300;
-    font-size: 1.8rem;
-
     color: var(--colour-text);
 }

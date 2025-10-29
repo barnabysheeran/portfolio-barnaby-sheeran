@@ -1,38 +1,4 @@
-:root {
-  --font-headline: 'MuseoModerno', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  
-  /* Body text styles */
-  --font-body-heading: var(--font-body);
-  --font-body-content: var(--font-body);
-  
-  /* Font weights */
-  --font-weight-body-heading: 600;  /* Semi-bold for body headings */
-  --font-weight-body-content: 400;  /* Regular for body content */
-  --font-weight-body-light: 300;    /* Light for captions/metadata */
-}
-
-/* Body text utility classes */
-.body-heading {
-  font-family: var(--font-body-heading);
-  font-weight: var(--font-weight-body-heading);
-  font-size: 1.125rem; /* 18px */
-  line-height: 1.4;
-}
-
-.body-content {
-  font-family: var(--font-body-content);
-  font-weight: var(--font-weight-body-content);
-  font-size: 1rem; /* 16px */
-  line-height: 1.6;
-}
-
-.body-caption {
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-body-light);
-  font-size: 0.875rem; /* 14px */
-  line-height: 1.5;
-}
+/* ___________________________________________________ Font Face Declarations */
 
 @font-face {
   font-family: 'MuseoModerno';
@@ -48,4 +14,57 @@
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: url('/assets/font/your-custom-font/Jost-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ___________________________________________________________ Font Variables */
+
+:root {
+  --font-museo: 'MuseoModerno', system-ui, sans-serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-jost: 'Jost', system-ui, sans-serif;
+  
+  /* Body text styles */
+  --font-inter-heading: var(--font-inter);
+  --font-inter-content: var(--font-inter);
+  
+  /* Font weights */
+  --font-weight-body-heading: 600;  
+  --font-weight-body-content: 400;  
+  --font-weight-body-light: 300;
+}
+
+/* ___________________________________________________________________ Header */
+
+.font-header-title {
+  font-family: var(--font-museo);
+  font-weight: 600;
+  font-size: 2.0rem; /* 32px */
+}
+
+/* _____________________________________________________________________ Body */
+
+.font-body-heading {
+  font-family: var(--font-museo);
+  font-weight: 600;
+  font-size: 2.0rem; /* 18px */
+}
+
+.font-body-content {
+  font-family: var(--font-museo);
+  font-weight: 400;
+  font-size: 2.0rem; /* 16px */
+}
+
+.font-body-link {
+  font-family: var(--font-museo);
+  font-weight: 800;
+  font-size: 2.0rem; /* 32px */
 }

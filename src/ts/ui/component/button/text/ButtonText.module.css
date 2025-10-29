@@ -1,9 +1,13 @@
 .button-text {
+    position: relative;
+
     color: var(--colour-text);
+
     pointer-events: auto;
     cursor: pointer;
+
     text-decoration: none;
-    position: relative;
+    
     display: inline-block;
 }
 
