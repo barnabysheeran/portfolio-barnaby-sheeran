@@ -25,38 +25,6 @@
     },
 
     {
-        "id": "100",
-        "title": "Test Just Title"
-    },
-
-    {
-        "id": "101",
-        "company": "Test Just Company"
-    },
-
-    {
-        "id": "102",
-        "description": [
-            "This is just a test description to see how descriptions without media or title only projects are handled in the UI."
-        ]
-    },
-
-    {
-        "id": "103",
-        "title": "Test Just Media",
-        "media": [
-            {
-                "type": "image",
-                "url": "assets/project/dev/1.avif"
-            },
-            {
-                "type": "image",
-                "url": "assets/project/battlebuilder/2.avif"
-            }
-        ]
-    },
-
-    {
         "id": "1",
         "title": "SaaS - Teamwork - Configurator",
         "company": "Onfigr",
