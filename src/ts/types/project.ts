@@ -17,8 +17,9 @@ export interface ProjectLinkData {
 
 export interface ProjectData {
   id: string;
-  title: string;
-  description: string;
-  media: MediaItemData[];
+  title?: string;
+  company?: string;
+  description?: string;
+  media?: MediaItemData[];
   links?: ProjectLinkData[];
 }

@@ -26,7 +26,11 @@ export default function SiteProject({ projectData }: SiteProjectProps) {
       viewport={{ once: true }}
     >
       <SiteProjectText projectData={projectData} />
-      <MediaViewer media={projectData.media} />
+
+      {/* Media Viewer - Optional */}
+      {projectData.media !== undefined && (
+        <MediaViewer media={projectData.media} />
+      )}
     </motion.div>
   );
 }

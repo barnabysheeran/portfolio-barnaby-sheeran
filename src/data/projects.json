@@ -2,19 +2,60 @@
     {
         "id": "0",
         "title": "TEST",
+        "company": "Aa Aa Aa Aa",
         "description": "Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa",
         "media": [
             {
                 "type": "image",
                 "url": "assets/project/dev/1.avif"
+            },
+            {
+                "type": "image",
+                "url": "assets/project/battlebuilder/2.avif"
+            },
+            {
+                "type": "image",
+                "url": "assets/project/battlebuilder/3.avif"
+            }
+        ]
+    },
+
+    {
+        "id": "100",
+        "title": "Test Just Title"
+    },
+
+    {
+        "id": "101",
+        "company": "Test Just Company"
+    },
+
+    {
+        "id": "102",
+        "title": "Test Just Description",
+        "description": "This is just a test description to see how descriptions without media or title only projects are handled in the UI."
+    },
+
+    {
+        "id": "103",
+        "title": "Test Just Media",
+        "media": [
+            {
+                "type": "image",
+                "url": "assets/project/dev/1.avif"
+            },
+            {
+                "type": "image",
+                "url": "assets/project/battlebuilder/2.avif"
             }
         ]
     },
 
     {
         "id": "1",
-        "title": "Onfigr",
-        "description": "SaaS - Teamwork - Configurator",
+        "title": "SaaS - Teamwork - Configurator",
+        "company": "Onfigr",
+        "description": "description",
         "media": [
             {
                 "type": "image",
@@ -25,7 +66,8 @@
 
     {
         "id": "2",
-        "title": "Pikcells",
+        "title": "Bespoke Configurator Software",
+        "company": "Pikcells",
         "description": "Bespoke Configurator Software",
         "media": [
             {
@@ -41,7 +83,8 @@
 
     {
         "id": "3",
-        "title": "BattleBuilder",
+        "title": "Co-Founded and Developed an Online Ecommerce Platform for Tabletop Gamers",
+        "company": "BattleBuilder",
         "description": "Development - Launch - Maintenance",
         "media": [
             {
@@ -76,6 +119,7 @@
     {
         "id": "4",
         "title": "These Beautiful Lies",
+        "company": "These Beautiful Lies",
         "description": "",
         "media": [
             {
