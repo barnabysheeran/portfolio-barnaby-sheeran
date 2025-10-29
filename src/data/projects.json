@@ -3,7 +3,9 @@
         "id": "0",
         "title": "TEST",
         "company": "Aa Aa Aa Aa",
-        "description": "Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa",
+        "description": [
+            "Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa"
+        ],
         "media": [
             {
                 "type": "image",
@@ -32,8 +34,9 @@
 
     {
         "id": "102",
-        "title": "Test Just Description",
-        "description": "This is just a test description to see how descriptions without media or title only projects are handled in the UI."
+        "description": [
+            "This is just a test description to see how descriptions without media or title only projects are handled in the UI."
+        ]
     },
 
     {
@@ -55,7 +58,9 @@
         "id": "1",
         "title": "SaaS - Teamwork - Configurator",
         "company": "Onfigr",
-        "description": "description",
+        "description": [
+            "description"
+        ],
         "media": [
             {
                 "type": "image",
@@ -68,7 +73,9 @@
         "id": "2",
         "title": "Bespoke Configurator Software",
         "company": "Pikcells",
-        "description": "Bespoke Configurator Software",
+        "description": [
+            "Bespoke Configurator Software"
+        ],
         "media": [
             {
                 "type": "image",
@@ -85,7 +92,9 @@
         "id": "3",
         "title": "Co-Founded and Developed an Online Ecommerce Platform for Tabletop Gamers",
         "company": "BattleBuilder",
-        "description": "Development - Launch - Maintenance",
+        "description": [
+            "Development - Launch - Maintenance"
+        ],
         "media": [
             {
                 "type": "image",
@@ -120,7 +129,9 @@
         "id": "4",
         "title": "These Beautiful Lies",
         "company": "These Beautiful Lies",
-        "description": "",
+        "description": [
+            ""
+        ],
         "media": [
             {
                 "type": "image",

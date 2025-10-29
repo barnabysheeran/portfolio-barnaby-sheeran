@@ -12,34 +12,43 @@ export default function SiteProjectText({ projectData }: SiteProjectTextProps) {
 
   return (
     <div className={styles['site-project-text']}>
-      {/* Company - Optional */}
-      {projectData.company && (
-        <h4 className={styles['company']}>{projectData.company}</h4>
-      )}
-
       {/* Title - Optional */}
       {projectData.title && (
-        <h3 className={styles['title']}>{projectData.title}</h3>
-      )}
-
-      {/* Description - Optional */}
-      {projectData.description !== undefined && (
-        <p className={styles['description']}>{projectData.description}</p>
-      )}
-
-      {/* Links - Optional */}
-      {projectData.links && projectData.links.length > 0 && (
-        <div>
-          {projectData.links.map((link) => (
-            <ButtonText
-              key={link.url}
-              text={'/ ' + link.label}
-              url={link.url}
-              target="_blank"
-            />
-          ))}
+        <div className={styles['row-title']}>
+          <h3 className={styles['title']}>{projectData.title}</h3>
         </div>
       )}
+
+      {/* Details Row */}
+      <div className={styles['details-row']}>
+        {/* Company - Optional */}
+        {projectData.company && (
+          <h4 className={styles['company']}>{projectData.company}</h4>
+        )}
+
+        {/* Description - Optional */}
+        {Array.isArray(projectData.description) &&
+          projectData.description.length > 0 &&
+          projectData.description.map((desc, idx) => (
+            <p className={styles['description']} key={idx}>
+              {desc}
+            </p>
+          ))}
+
+        {/* Links - Optional */}
+        {projectData.links && projectData.links.length > 0 && (
+          <div>
+            {projectData.links.map((link) => (
+              <ButtonText
+                key={link.url}
+                text={'/ ' + link.label}
+                url={link.url}
+                target="_blank"
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

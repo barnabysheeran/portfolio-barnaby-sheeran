@@ -19,7 +19,7 @@ export interface ProjectData {
   id: string;
   title?: string;
   company?: string;
-  description?: string;
+  description?: string[];
   media?: MediaItemData[];
   links?: ProjectLinkData[];
 }

@@ -15,6 +15,14 @@
   text-align: left;
 }
 
+/* ____________________________________________________________________ Title */
+
+.row-title {
+  width: 100%;
+
+  background: #999999;
+}
+
 .title {
   font-size: 1rem;
   font-weight: 600;
@@ -22,10 +30,24 @@
   color: var(--colour-text);
 }
 
+/* __________________________________________________________________ Details */
+
+.details-row {
+  width: 100%;
+}
+
+.company {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: calc(var(--grid-cell-height) * 3.0);
+
+  color: var(--colour-text);
+}
+
 .description {
   font-size: 1rem;
   line-height: calc(var(--grid-cell-height) * 3.0);
-  margin: 0;
+
   color: var(--colour-text);
 }
 
@@ -33,7 +55,7 @@
 
 @media (min-width: 768px) {
   .site-project-text {
-    flex-direction: row;
+    /* flex-direction: row; */
     gap: calc(var(--grid-cell-width) * 6.0);
   }
 }
