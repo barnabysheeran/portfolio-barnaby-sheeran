@@ -1,30 +1,5 @@
 [
     {
-        "id": "0",
-        "title": "Title",
-        "company": "Company",
-        "description": [
-            "Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa",
-            "Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa",
-            "Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa Aa aa aa aa"
-        ],
-        "media": [
-            {
-                "type": "image",
-                "url": "assets/project/dev/1.avif"
-            },
-            {
-                "type": "image",
-                "url": "assets/project/battlebuilder/2.avif"
-            },
-            {
-                "type": "image",
-                "url": "assets/project/battlebuilder/3.avif"
-            }
-        ]
-    },
-
-    {
         "id": "1",
         "title": "SaaS - Teamwork - Configurator",
         "company": "Onfigr",
