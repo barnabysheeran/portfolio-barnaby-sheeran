@@ -20,7 +20,7 @@ export default function SiteProjectText({ projectData }: SiteProjectTextProps) {
       )}
 
       {/* Details Row */}
-      <div className={styles['details-row']}>
+      <div className={styles['row-details']}>
         {/* Company - Optional */}
         {projectData.company && (
           <p className={styles['company']}>{projectData.company}</p>
@@ -38,7 +38,7 @@ export default function SiteProjectText({ projectData }: SiteProjectTextProps) {
 
       {/* Links Row - Optional */}
       {projectData.links && projectData.links.length > 0 && (
-        <div className={styles['links-row']}>
+        <div className={styles['row-links']}>
           {projectData.links.map((link) => (
             <ButtonText
               key={link.url}

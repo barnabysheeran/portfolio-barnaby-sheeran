@@ -34,16 +34,18 @@
 
 /* __________________________________________________________________ Details */
 
-.details-row {
+.row-details {
   width: 100%;
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  background: #eeeeee;
 }
 
 @media (min-width: 768px) {
-  .details-row {
+  .row-details {
     flex-direction: row;
     /* gap: calc(var(--grid-cell-width) * 6.0); */
   }
@@ -56,6 +58,12 @@
   color: var(--colour-text);
 }
 
+.holder-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .description {
   font-size: 1rem;
   font-weight: 400;
@@ -65,7 +73,7 @@
 
 /* ____________________________________________________________________ Links */
 
-.links-row {
+.row-links {
   width: 100%;
 
   background: #eeeeee;
