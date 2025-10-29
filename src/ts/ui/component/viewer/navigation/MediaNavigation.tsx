@@ -15,10 +15,6 @@ export default function MediaNavigation({
 }: MediaNavigationProps) {
   // ____________________________________________________________________ Render
 
-  if (media.length <= 1) {
-    return null;
-  }
-
   return (
     <nav
       className={styles['media-navigation']}

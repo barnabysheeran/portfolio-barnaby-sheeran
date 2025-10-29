@@ -90,11 +90,13 @@ export default function MediaViewer({ media }: MediaViewerProps) {
           )}
         </AnimatePresence>
       </div>
-      <MediaNavigation
-        media={media}
-        currentIndex={currentIndex}
-        onNavigate={handleNavigate}
-      />
+      {media.length > 0 && (
+        <MediaNavigation
+          media={media}
+          currentIndex={currentIndex}
+          onNavigate={handleNavigate}
+        />
+      )}
     </>
   );
 }
