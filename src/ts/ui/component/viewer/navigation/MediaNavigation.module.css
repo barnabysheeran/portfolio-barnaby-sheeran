@@ -19,7 +19,6 @@
 
   box-sizing: border-box;
   border-radius: 50%;
-  border: none;
 
   background-color: var(--colour-background);
   color: var(--colour-text-primary);
