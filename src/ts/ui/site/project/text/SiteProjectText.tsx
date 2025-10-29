@@ -15,7 +15,9 @@ export default function SiteProjectText({ projectData }: SiteProjectTextProps) {
       {/* Title Row- Optional */}
       {projectData.title && (
         <div className={styles['row-title']}>
-          <p className={styles['title']}>{projectData.title}</p>
+          <p className={`${styles['title']} font-body-heading`}>
+            {projectData.title}
+          </p>
         </div>
       )}
 
@@ -23,7 +25,7 @@ export default function SiteProjectText({ projectData }: SiteProjectTextProps) {
       <div className={styles['row-details']}>
         {/* Company - Optional */}
         {projectData.company && (
-          <p className={styles[`${'company'} font-body-heading`]}>
+          <p className={`${styles['company']} font-body-heading`}>
             {projectData.company}
           </p>
         )}
@@ -34,7 +36,7 @@ export default function SiteProjectText({ projectData }: SiteProjectTextProps) {
             <div className={styles['holder-description']}>
               {projectData.description.map((desc, idx) => (
                 <p
-                  className={styles[`${'description'} font-body-content`]}
+                  className={`${styles['description']} font-body-content`}
                   key={idx}
                 >
                   {desc}
@@ -46,7 +48,7 @@ export default function SiteProjectText({ projectData }: SiteProjectTextProps) {
 
       {/* Links Row - Optional */}
       {projectData.links && projectData.links.length > 0 && (
-        <div className={styles[`${'row-links'} font-body-link`]}>
+        <div className={`${styles['row-links']} font-body-link`}>
           {projectData.links.map((link) => (
             <ButtonText
               key={link.url}
