@@ -28,12 +28,15 @@ export default function SiteProjectText({ projectData }: SiteProjectTextProps) {
 
         {/* Description - Optional */}
         {Array.isArray(projectData.description) &&
-          projectData.description.length > 0 &&
-          projectData.description.map((desc, idx) => (
-            <p className={styles['description']} key={idx}>
-              {desc}
-            </p>
-          ))}
+          projectData.description.length > 0 && (
+            <div className={styles['holder-description']}>
+              {projectData.description.map((desc, idx) => (
+                <p className={styles['description']} key={idx}>
+                  {desc}
+                </p>
+              ))}
+            </div>
+          )}
       </div>
 
       {/* Links Row - Optional */}
