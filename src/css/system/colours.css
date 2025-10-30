@@ -1,7 +1,6 @@
 :root {
   /* Base Colors */
   --colour-white: rgba(255, 255, 255, 1);
-  --colour-grey: rgba(128, 128, 128, 1);
   --colour-black: rgba(0, 0, 0, 1);
 
   /* Light (Default) */
@@ -9,8 +8,7 @@
   --colour-text: var(--colour-black);
 
   --colour-primary: rgba(0, 120, 215, 1);
-  --colour-secondary: rgba(32, 32, 32, 1);
-  --colour-tertiary: rgba(255, 255, 255, 1);
+  --colour-secondary: rgba(0, 60, 215, 1);
 
   --colour-blur: rgba(255, 255, 255, 0.15);
 }
@@ -23,8 +21,7 @@
   --colour-text: var(--colour-white);
 
   --colour-primary: rgba(255, 126, 219, 1);
-  --colour-secondary: rgba(200, 200, 200, 1);
-  --colour-tertiary: rgba(32, 32, 32, 1);
+  --colour-secondary: rgba(102, 73, 166, 1);
 
   --colour-blur: rgba(0, 0, 0, 0.15);
 }

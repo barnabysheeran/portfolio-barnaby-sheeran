@@ -1,9 +1,9 @@
 .site-footer {
     width: 100%;
-    height: calc(var(--grid-cell-height) * 18.0);
+    height: calc(var(--grid-cell-height) * 24.0);
 
     box-sizing: border-box;
-    margin-top: calc(var(--grid-cell-height) * 4.0);
+    padding-top: calc(var(--grid-cell-height) * 3.0);
 
     display: flex;
     flex-direction: column;

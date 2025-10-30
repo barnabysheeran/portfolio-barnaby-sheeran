@@ -4,7 +4,7 @@ import styles from './SiteFooter.module.css';
 
 export default function SiteFooter() {
   return (
-    <div className={styles['site-footer']}>
+    <div className={`${styles['site-footer']} font-body-link`}>
       <ButtonText
         text="/ Portfolio Creative Technologist"
         url="https://www.barnabysheeran.com/ct"

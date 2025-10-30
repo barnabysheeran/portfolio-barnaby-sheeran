@@ -1,6 +1,7 @@
 @import "./system/reset.css";
-@import "./system/blur.css";
+
 @import "./system/grid.css";
+@import "./system/blur.css";
 @import "./system/colours.css";
 @import "./system/duration.css";
 @import "./system/transition.css";
