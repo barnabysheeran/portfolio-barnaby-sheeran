@@ -9,16 +9,8 @@
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/assets/font/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'Jost';
-  src: url('/assets/font/your-custom-font/Jost-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/font/jost/Jost-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -28,43 +20,40 @@
 
 :root {
   --font-museo: 'MuseoModerno', system-ui, sans-serif;
-  --font-inter: 'Inter', system-ui, sans-serif;
   --font-jost: 'Jost', system-ui, sans-serif;
   
-  /* Body text styles */
-  --font-inter-heading: var(--font-inter);
-  --font-inter-content: var(--font-inter);
-  
-  /* Font weights */
-  --font-weight-body-heading: 600;  
-  --font-weight-body-content: 400;  
-  --font-weight-body-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
 }
 
 /* ___________________________________________________________________ Header */
 
 .font-header-title {
   font-family: var(--font-museo);
-  font-weight: 600;
-  font-size: 2.0rem; /* 32px */
+  font-weight: var(--font-weight-regular);
+  font-size: 2.0rem;
 }
 
 /* _____________________________________________________________________ Body */
 
 .font-body-heading {
-  font-family: var(--font-museo);
-  font-weight: 400;
-  font-size: 1.0rem; /* 18px */
+  font-family: var(--font-jost);
+  font-weight: var(--font-weight-regular);
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
 }
 
 .font-body-content {
-  font-family: var(--font-museo);
-  font-weight: 400;
-  font-size: 1.0rem; /* 16px */
+  font-family: var(--font-jost);
+  font-weight: var(--font-weight-regular);
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
 }
 
 .font-body-link {
-  font-family: var(--font-museo);
-  font-weight: 400;
-  font-size: 1.0rem; /* 32px */
+  font-family: var(--font-jost);
+  font-weight: var(--font-weight-regular);
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
 }

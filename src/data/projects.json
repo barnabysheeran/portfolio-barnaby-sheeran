@@ -1,10 +1,12 @@
 [
     {
         "id": "1",
-        "title": "SaaS - Teamwork - Configurator",
+        "title": "Agile SaaS Senior Developer",
         "company": "Onfigr",
         "description": [
-            "description"
+            "Bullet Point Development",
+            "Feature Implementation",
+            "Bug Fixing"
         ],
         "media": [
             {
@@ -16,9 +18,10 @@
 
     {
         "id": "2",
-        "title": "Bespoke Configurator Software",
+        "title": "Project Based Senior Developer",
         "company": "Pikcells",
         "description": [
+            "Bullet Point Development - Feature Implementation - Bug Fixing",
             "Bespoke Configurator Software"
         ],
         "media": [
@@ -38,7 +41,11 @@
         "title": "Co-Founded and Developed an Online Ecommerce Company",
         "company": "BattleBuilder",
         "description": [
-            "Development - Launch - Maintenance"
+            "Development",
+            "Launch",
+            "Maintenance",
+            "Admin Tools",
+            "Ecommerce Integration"
         ],
         "media": [
             {
@@ -64,7 +71,7 @@
 
     {
         "id": "4",
-        "title": "Freelance Creative Technologist",
+        "title": "Created Bespoke Multimedia",
         "company": "These Beautiful Lies",
         "description": [
             ""
