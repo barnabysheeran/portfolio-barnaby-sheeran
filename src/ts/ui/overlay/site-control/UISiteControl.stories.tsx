@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import ButtonText from './ButtonText';
+import UISiteControl from './UISiteControl';
 
-const meta: Meta<typeof ButtonText> = {
-  title: 'Button/ButtonText',
-  component: ButtonText,
+const meta: Meta<typeof UISiteControl> = {
+  title: 'UI/Overlay/SiteControl/UISiteControl',
+  component: UISiteControl,
   decorators: [
     (Story) => (
       <div
@@ -12,6 +12,7 @@ const meta: Meta<typeof ButtonText> = {
           justifyContent: 'center',
           alignItems: 'center',
           height: '100vh',
+          width: '100vw',
         }}
       >
         <Story />
@@ -22,11 +23,6 @@ const meta: Meta<typeof ButtonText> = {
 
 export default meta;
 
-type Story = StoryObj<typeof ButtonText>;
+type Story = StoryObj<typeof UISiteControl>;
 
-export const Default: Story = {
-  args: {
-    text: 'Click',
-    url: 'https://example.com',
-  },
-};
+export const Default: Story = {};
