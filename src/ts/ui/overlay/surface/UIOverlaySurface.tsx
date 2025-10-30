@@ -1,5 +1,3 @@
-import { Vector2 } from 'three';
-
 import { useUIStateStore } from '../../../store/uiState/uiStateStore';
 
 // _______________________________________________________________________ Store
@@ -34,18 +32,16 @@ function updateLoop() {
   // Multiply by devicePixelRatio for physical pixels (DPI aware)
   const DEVICE_PIXEL_RATIO = window.devicePixelRatio || 1;
 
-  setCursorPositionPx(
-    new Vector2(
-      lastClientX * DEVICE_PIXEL_RATIO,
-      lastClientY * DEVICE_PIXEL_RATIO,
-    ),
-  );
-  setSurfaceSizePx(
-    new Vector2(
-      window.innerWidth * DEVICE_PIXEL_RATIO,
-      window.innerHeight * DEVICE_PIXEL_RATIO,
-    ),
-  );
+  setCursorPositionPx({
+    x: lastClientX * DEVICE_PIXEL_RATIO,
+    y: lastClientY * DEVICE_PIXEL_RATIO,
+  });
+
+  setSurfaceSizePx({
+    x: window.innerWidth * DEVICE_PIXEL_RATIO,
+    y: window.innerHeight * DEVICE_PIXEL_RATIO,
+  });
+
   requestAnimationFrame(updateLoop);
 }
 
