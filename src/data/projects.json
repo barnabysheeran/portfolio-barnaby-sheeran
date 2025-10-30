@@ -18,10 +18,9 @@
 
     {
         "id": "2",
-        "title": "Project Based Developer",
+        "title": "Project Developer",
         "company": "Pikcells",
         "description": [
-            "Bullet Point Development - Feature Implementation - Bug Fixing",
             "Bespoke Configurator Software"
         ],
         "media": [

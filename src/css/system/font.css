@@ -40,20 +40,27 @@
 .font-body-heading {
   font-family: var(--font-jost);
   font-weight: var(--font-weight-regular);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.font-body-subtitle {
+  font-family: var(--font-jost);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.0rem;
   letter-spacing: 0.02em;
 }
 
 .font-body-content {
   font-family: var(--font-jost);
   font-weight: var(--font-weight-regular);
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   letter-spacing: 0.02em;
 }
 
 .font-body-link {
   font-family: var(--font-jost);
   font-weight: var(--font-weight-regular);
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   letter-spacing: 0.02em;
 }

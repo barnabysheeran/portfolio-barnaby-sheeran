@@ -25,7 +25,7 @@ export default function SiteProjectText({ projectData }: SiteProjectTextProps) {
       <div className={styles['row-details']}>
         {/* Company - Optional */}
         {projectData.company && (
-          <p className={`${styles['company']} font-body-heading`}>
+          <p className={`${styles['company']} font-body-subtitle`}>
             {projectData.company}
           </p>
         )}
