@@ -1,7 +1,7 @@
 [
     {
         "id": "1",
-        "title": "Agile SaaS Senior Developer",
+        "title": "Agile SaaS Developer",
         "company": "Onfigr",
         "description": [
             "Bullet Point Development",
@@ -18,7 +18,7 @@
 
     {
         "id": "2",
-        "title": "Project Based Senior Developer",
+        "title": "Project Based Developer",
         "company": "Pikcells",
         "description": [
             "Bullet Point Development - Feature Implementation - Bug Fixing",
@@ -38,7 +38,7 @@
 
     {
         "id": "3",
-        "title": "Co-Founded and Developed an Online Ecommerce Company",
+        "title": "Ecommerce Product Developer",
         "company": "BattleBuilder",
         "description": [
             "Development",
