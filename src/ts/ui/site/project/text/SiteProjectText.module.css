@@ -26,6 +26,9 @@
 .title {
   margin: 0;
   color: var(--colour-secondary);
+
+  
+  line-height: calc(var(--grid-cell-height) * 4.0);
 }
 
 /* __________________________________________________________________ Details */

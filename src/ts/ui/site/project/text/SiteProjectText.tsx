@@ -39,7 +39,7 @@ export default function SiteProjectText({ projectData }: SiteProjectTextProps) {
                   className={`${styles['description']} font-body-content`}
                   key={idx}
                 >
-                  - {desc}
+                  {desc}
                 </p>
               ))}
             </div>
