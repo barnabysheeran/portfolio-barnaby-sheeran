@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-import { Vector2 } from 'three';
+import { type Vector2 } from '../../types/vector';
 
 import { type Theme, THEMES } from '../../types';
 
@@ -31,7 +31,7 @@ export const useUIStateStore = create<UIState>()(
 
       // ____________________________________________________ Cursor Position Px
 
-      cursorPositionPx: new Vector2(0, 0),
+      cursorPositionPx: { x: 0, y: 0 },
 
       setCursorPositionPx: (positionPx) => {
         set({ cursorPositionPx: positionPx });
@@ -39,7 +39,7 @@ export const useUIStateStore = create<UIState>()(
 
       // _______________________________________________________ Surface Size Px
 
-      surfaceSizePx: new Vector2(0, 0),
+      surfaceSizePx: { x: 0, y: 0 },
 
       setSurfaceSizePx: (sizePx) => {
         set({ surfaceSizePx: sizePx });
