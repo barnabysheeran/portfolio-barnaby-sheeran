@@ -46,4 +46,7 @@
 
 .navigation-dot:focus-visible {
   background-color: var(--colour-background);
+
+  outline: 2px solid var(--colour-primary);
+  outline-offset: 3px;
 }
