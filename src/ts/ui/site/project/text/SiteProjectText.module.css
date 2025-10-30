@@ -27,7 +27,6 @@
   margin: 0;
   color: var(--colour-secondary);
 
-  
   line-height: calc(var(--grid-cell-height) * 4.0);
 }
 
@@ -50,6 +49,9 @@
 
 .company {
   color: var(--colour-text);
+
+  box-sizing: border-box;
+  padding-bottom: calc(var(--grid-cell-height) * 1.0);
 }
 
 .holder-description {
