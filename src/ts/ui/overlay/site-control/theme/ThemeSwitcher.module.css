@@ -31,8 +31,8 @@
 }
 
 .invisible-button:focus-visible {
-    outline: 2px solid var(--colour-secondary);
-    outline-offset: 2px;
+    outline: var(--border-thickness-thin) solid var(--colour-secondary);
+    outline-offset: var(--outline-offset);
 }
 
 /* ____________________________________________________________________ Icons */
