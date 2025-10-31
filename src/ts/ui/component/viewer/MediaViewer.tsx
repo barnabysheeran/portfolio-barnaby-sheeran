@@ -26,7 +26,19 @@ export default function MediaViewer({ media }: MediaViewerProps) {
 
   const hasMultipleItems = media.length > 1;
 
-  const handleMediaClick = () => {
+  const handleMediaLoaded = (idx: number) => {
+    setLoaded((prev) => ({ ...prev, [idx]: true }));
+  };
+
+  // ________________________________________________________________ Navigation
+
+  const handleNavigate = (index: number) => {
+    prevIndex.current = currentIndex;
+
+    setCurrentIndex(index);
+  };
+
+  const handleNavigateNext = () => {
     if (hasMultipleItems) {
       // Store Previous Index
       prevIndex.current = currentIndex;
@@ -37,15 +49,6 @@ export default function MediaViewer({ media }: MediaViewerProps) {
 
       setCurrentIndex(nextIndex);
     }
-  };
-
-  const handleNavigate = (index: number) => {
-    prevIndex.current = currentIndex;
-    setCurrentIndex(index);
-  };
-
-  const handleMediaLoaded = (idx: number) => {
-    setLoaded((prev) => ({ ...prev, [idx]: true }));
   };
 
   // ___________________________________________________________ Animation Props
@@ -72,7 +75,7 @@ export default function MediaViewer({ media }: MediaViewerProps) {
               <MediaItem
                 media={media[currentIndex]}
                 index={currentIndex}
-                onClick={hasMultipleItems ? handleMediaClick : undefined}
+                onClick={hasMultipleItems ? handleNavigateNext : undefined}
                 onMediaLoaded={() => handleMediaLoaded(currentIndex)}
               />
             </motion.div>
@@ -82,7 +85,7 @@ export default function MediaViewer({ media }: MediaViewerProps) {
                 <MediaItem
                   media={media[idx]}
                   index={idx}
-                  onClick={hasMultipleItems ? handleMediaClick : undefined}
+                  onClick={hasMultipleItems ? handleNavigateNext : undefined}
                   onMediaLoaded={() => handleMediaLoaded(idx)}
                 />
               </motion.div>
@@ -95,6 +98,7 @@ export default function MediaViewer({ media }: MediaViewerProps) {
           media={media}
           currentIndex={currentIndex}
           onNavigate={handleNavigate}
+          onNavigateNext={handleNavigateNext}
         />
       )}
     </>
