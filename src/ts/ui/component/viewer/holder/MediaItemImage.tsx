@@ -1,6 +1,6 @@
 import type { MediaItemData } from '../../../../types';
 
-import styles from './MediaItem.module.css';
+import styles from './MediaItemImage.module.css';
 
 interface MediaItemProps {
   media: MediaItemData;

@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import type { MediaItemData } from '../../../types';
 
-import MediaItem from './holder/MediaItem';
+import MediaItemImage from './holder/MediaItemImage';
 import MediaNavigation from './navigation/MediaNavigation';
 
 import { DURATION_SLOW } from '../../../motion/duration';
@@ -72,7 +72,7 @@ export default function MediaViewer({ media }: MediaViewerProps) {
         <AnimatePresence>
           {currentIndex === prevIndex.current ? (
             <motion.div key={currentIndex} {...getMotionProps(currentIndex)}>
-              <MediaItem
+              <MediaItemImage
                 media={media[currentIndex]}
                 index={currentIndex}
                 onClick={hasMultipleItems ? handleNavigateNext : undefined}
@@ -82,7 +82,7 @@ export default function MediaViewer({ media }: MediaViewerProps) {
           ) : (
             [prevIndex.current, currentIndex].map((idx) => (
               <motion.div key={idx} {...getMotionProps(idx)}>
-                <MediaItem
+                <MediaItemImage
                   media={media[idx]}
                   index={idx}
                   onClick={hasMultipleItems ? handleNavigateNext : undefined}
