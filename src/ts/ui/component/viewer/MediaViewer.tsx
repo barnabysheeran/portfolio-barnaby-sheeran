@@ -69,6 +69,7 @@ export default function MediaViewer({ media }: MediaViewerProps) {
         className={styles['media-viewer']}
         style={{ position: 'relative', overflow: 'hidden' }}
       >
+        {/* Media Items */}
         <AnimatePresence>
           {currentIndex === prevIndex.current ? (
             <motion.div key={currentIndex} {...getMotionProps(currentIndex)}>
@@ -93,6 +94,8 @@ export default function MediaViewer({ media }: MediaViewerProps) {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Navigation */}
       {media.length > 0 && (
         <MediaNavigation
           media={media}
