@@ -1,45 +1,39 @@
+// MediaItemImage.tsx
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+
 import type { MediaItemData } from '../../../../types';
 
 import styles from './MediaItemImage.module.css';
 
-interface MediaItemProps {
+interface MediaItemImageProps {
   media: MediaItemData;
-  index: number;
+  isActive: boolean;
   onClick?: () => void;
-  onMediaLoaded?: () => void;
 }
 
-export default function MediaItem({
+export default function MediaItemImage({
   media,
-  index,
+  isActive,
   onClick,
-  onMediaLoaded,
-}: MediaItemProps) {
-  // ____________________________________________________________________ Render
+}: MediaItemImageProps) {
+  const [loaded, setLoaded] = useState(false);
 
   return (
-    <div
-      className={`${styles['media-item']} ${!onClick ? styles['media-item--disabled'] : ''}`}
-      onClick={onClick}
-      style={{ cursor: onClick ? 'pointer' : 'default' }}
+    <motion.div
+      className={styles['media-item']}
+      style={{
+        opacity: isActive && loaded ? 1 : 0,
+        pointerEvents: isActive ? 'auto' : 'none',
+      }}
     >
-      {media.type === 'image' ? (
-        <img
-          src={media.url}
-          alt={`Project media ${index + 1}`}
-          className={styles['media-image']}
-          draggable={false}
-          onLoad={onMediaLoaded}
-        />
-      ) : (
-        <video
-          src={media.url}
-          controls
-          className={styles['media-video']}
-          aria-label={`Project video ${index + 1}`}
-          onLoadedData={onMediaLoaded}
-        />
-      )}
-    </div>
+      <img
+        className={styles['media-image']}
+        src={media.url}
+        alt=""
+        onLoad={() => setLoaded(true)}
+        onClick={onClick}
+      />
+    </motion.div>
   );
 }

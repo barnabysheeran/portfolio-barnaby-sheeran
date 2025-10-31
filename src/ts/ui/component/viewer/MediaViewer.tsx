@@ -1,13 +1,9 @@
-import { useState, useRef } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 
 import type { MediaItemData } from '../../../types';
 
 import MediaItemImage from './holder/MediaItemImage';
 import MediaNavigation from './navigation/MediaNavigation';
-
-import { DURATION_SLOW } from '../../../motion/duration';
-import { EASE_DEFAULT } from '../../../motion/ease';
 
 import styles from './MediaViewer.module.css';
 
@@ -19,47 +15,14 @@ export default function MediaViewer({ media }: MediaViewerProps) {
   // _____________________________________________________________________ State
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const prevIndex = useRef<number>(0);
-  const [loaded, setLoaded] = useState<{ [idx: number]: boolean }>({});
-
-  // _____________________________________________________________________ Media
-
-  const hasMultipleItems = media.length > 1;
-
-  const handleMediaLoaded = (idx: number) => {
-    setLoaded((prev) => ({ ...prev, [idx]: true }));
-  };
 
   // ________________________________________________________________ Navigation
 
-  const handleNavigate = (index: number) => {
-    prevIndex.current = currentIndex;
-
-    setCurrentIndex(index);
-  };
+  const handleNavigate = (index: number) => setCurrentIndex(index);
 
   const handleNavigateNext = () => {
-    if (hasMultipleItems) {
-      // Store Previous Index
-      prevIndex.current = currentIndex;
-
-      // Calculate Next Index
-      let nextIndex = currentIndex + 1;
-      if (nextIndex >= media.length) nextIndex = 0;
-
-      setCurrentIndex(nextIndex);
-    }
+    setCurrentIndex((prev) => (prev + 1) % media.length);
   };
-
-  // ___________________________________________________________ Animation Props
-
-  const getMotionProps = (idx: number) => ({
-    className: styles['media-item-holder'],
-    initial: { opacity: 0 },
-    animate: { opacity: loaded[idx] ? 1 : 0 },
-    exit: { opacity: 0 },
-    transition: { duration: DURATION_SLOW, ease: EASE_DEFAULT },
-  });
 
   // ____________________________________________________________________ Render
 
@@ -70,33 +33,18 @@ export default function MediaViewer({ media }: MediaViewerProps) {
         style={{ position: 'relative', overflow: 'hidden' }}
       >
         {/* Media Items */}
-        <AnimatePresence>
-          {currentIndex === prevIndex.current ? (
-            <motion.div key={currentIndex} {...getMotionProps(currentIndex)}>
-              <MediaItemImage
-                media={media[currentIndex]}
-                index={currentIndex}
-                onClick={hasMultipleItems ? handleNavigateNext : undefined}
-                onMediaLoaded={() => handleMediaLoaded(currentIndex)}
-              />
-            </motion.div>
-          ) : (
-            [prevIndex.current, currentIndex].map((idx) => (
-              <motion.div key={idx} {...getMotionProps(idx)}>
-                <MediaItemImage
-                  media={media[idx]}
-                  index={idx}
-                  onClick={hasMultipleItems ? handleNavigateNext : undefined}
-                  onMediaLoaded={() => handleMediaLoaded(idx)}
-                />
-              </motion.div>
-            ))
-          )}
-        </AnimatePresence>
+        {media.map((item, idx) => (
+          <MediaItemImage
+            key={idx}
+            media={item}
+            isActive={idx === currentIndex}
+            onClick={handleNavigateNext}
+          />
+        ))}
       </div>
 
       {/* Navigation */}
-      {media.length > 0 && (
+      {media.length > 1 && (
         <MediaNavigation
           media={media}
           currentIndex={currentIndex}
