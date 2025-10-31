@@ -4,7 +4,6 @@
   box-sizing: border-box;
   padding-left: calc(var(--grid-cell-width) * 9.0);
   padding-right: calc(var(--grid-cell-width) * 3.0);
-  padding-top: calc(var(--grid-cell-height) * 3.0);
   padding-bottom: calc(var(--grid-cell-height) * 3.0);
 
   display: flex;

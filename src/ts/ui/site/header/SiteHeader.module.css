@@ -2,7 +2,7 @@
     width: 100%;
 
     padding-top: calc(var(--grid-cell-height) * 9.0);
-    padding-bottom: calc(var(--grid-cell-height) * 3.0);
+    padding-bottom: calc(var(--grid-cell-height) * 6.0);
 }
 
 .site-header .title {
