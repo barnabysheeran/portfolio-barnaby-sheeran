@@ -26,7 +26,8 @@
   --font-weight-medium: 500;
   --font-weight-bold: 600;
 
-  --font-size-header: 1.75rem;
+  --font-size-header: 2.0rem;
+
   --font-size-heading: 1.5rem;
   --font-size-body: 1.0rem;
 }
@@ -37,7 +38,7 @@
   font-family: var(--font-museo);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-header);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.0em;
 }
 
 /* _____________________________________________________________________ Body */
