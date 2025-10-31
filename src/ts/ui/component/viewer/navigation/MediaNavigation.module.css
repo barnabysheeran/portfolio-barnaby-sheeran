@@ -14,19 +14,19 @@
 
   float: left;
 
-  gap: calc(var(--grid-cell-width) * 1);
+  gap: calc(var(--grid-cell-width) * 1.0);
 }
 
 .navigation-dot {
-  width: calc(var(--grid-cell-width) * 3);
-  height: calc(var(--grid-cell-height) * 3);
+  width: calc(var(--grid-cell-width) * 2.5);
+  height: calc(var(--grid-cell-height) * 2.5);
 
   box-sizing: border-box;
   border-radius: 50%;
 
   background-color: var(--colour-background);
   color: var(--colour-text-primary);
-  border: 0.18rem solid var(--colour-primary);
+  border: var(--border-thickness-thin) solid var(--colour-primary);
 
   pointer-events: auto;
   cursor: pointer;
