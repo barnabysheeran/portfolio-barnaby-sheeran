@@ -36,10 +36,7 @@
   transition: background-color var(--duration-quick) ease-out;
 }
 
-.navigation-dot:hover {
-  background-color: var(--colour-primary);
-  border-color: var(--colour-primary);
-}
+
 
 .navigation-dot--active {
   background-color: var(--colour-secondary);
@@ -51,4 +48,14 @@
 .navigation-dot:focus-visible {
   outline: var(--border-thickness-thin) solid var(--colour-primary);
   outline-offset: var(--outline-offset);
+}
+
+
+/* __________________________________________________________________ Desktop */
+
+@media (min-width: 768px) {
+  .navigation-dot:hover {
+    background-color: var(--colour-primary);
+    border-color: var(--colour-primary);
+  }
 }

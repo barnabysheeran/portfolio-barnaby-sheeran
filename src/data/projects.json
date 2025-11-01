@@ -82,12 +82,6 @@
                 "type": "image",
                 "url": "assets/project/dev/blue.avif"
             }
-        ],
-        "links": [
-            {
-                "label": "BattleBuilder.net",
-                "url": "https://battlebuilder.net"
-            }
         ]
     },
 
