@@ -1,18 +1,17 @@
 :root {
+  /* TODO Ensure Durations are matched to Framer Motion */
+  --duration-slow: 0.6s;
+  --duration-quick: 0.2s;
+
   --transition-quick: var(--duration-quick);
   --transition-slow: var(--duration-slow);
 
   transition-property: background-color, color;
   transition-duration: var(--transition-slow);
   transition-timing-function: ease;
-}
 
-/* TODO Ensure Durations are matched to Framer Motion */
-:root {
-    --duration-slow: 2.6s;
-    --duration-quick: 0.2s;
-}
 
+}
 
 * {
   transition-property: background-color, color, border-color, fill, stroke;
