@@ -68,19 +68,15 @@
         "media": [
             {
                 "type": "image",
-                "url": "assets/project/dev/grey.avif"
+                "url": "assets/project/battlebuilder/1.avif"
             },
             {
                 "type": "image",
-                "url": "assets/project/dev/red.avif"
+                "url": "assets/project/battlebuilder/2.avif"
             },
             {
                 "type": "image",
-                "url": "assets/project/dev/green.avif"
-            },
-            {
-                "type": "image",
-                "url": "assets/project/dev/blue.avif"
+                "url": "assets/project/battlebuilder/3.avif"
             }
         ]
     },
