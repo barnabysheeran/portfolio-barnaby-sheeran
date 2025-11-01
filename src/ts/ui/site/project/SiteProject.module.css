@@ -10,7 +10,7 @@
     padding-top: 0;
     padding-bottom: 0;
 
-    margin-bottom: calc(var(--grid-cell-height) * 12.0);
+    margin-bottom: calc(var(--grid-cell-height) * 13.0);
 }
 
 
