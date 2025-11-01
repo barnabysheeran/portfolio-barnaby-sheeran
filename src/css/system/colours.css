@@ -8,7 +8,7 @@
   --colour-text: var(--colour-black);
 
   --colour-primary: rgba(0, 120, 215, 1);
-  --colour-secondary: rgba(0, 120, 215, 1);
+  --colour-secondary: rgba(0, 72, 128, 1);
 
   --colour-blur: rgba(255, 255, 255, 0.15);
 }
@@ -21,7 +21,7 @@
   --colour-text: var(--colour-white);
 
   --colour-primary: rgba(255, 126, 219, 1);
-  --colour-secondary: rgba(255, 126, 219, 1);
+  --colour-secondary: rgba(148, 74, 128, 1);
 
   --colour-blur: rgba(0, 0, 0, 0.15);
 }

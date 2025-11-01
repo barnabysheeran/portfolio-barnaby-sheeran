@@ -52,7 +52,7 @@
 
 .font-body-subtitle {
   font-family: var(--font-jost);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-medium);
   font-size: var(--font-size-body);
   letter-spacing: 0.02em;
 }

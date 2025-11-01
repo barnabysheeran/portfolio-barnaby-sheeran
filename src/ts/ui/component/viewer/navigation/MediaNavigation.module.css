@@ -26,22 +26,27 @@
 
   background-color: var(--colour-background);
   color: var(--colour-text-primary);
-  border: var(--border-thickness-thin) solid var(--colour-primary);
+  border: var(--border-thickness-thin) solid var(--colour-secondary);
 
   pointer-events: auto;
   cursor: pointer;
 
   padding: 0;
 
-  transition: background-color var(--transition-quick) ease-out;
+  transition: background-color var(--duration-slow) ease-out;
+  transition: border-color var(--duration-quick) ease-out;
 }
 
 .navigation-dot:hover {
   background-color: var(--colour-primary);
+  border-color: var(--colour-primary);
 }
 
 .navigation-dot--active {
-  background-color: var(--colour-primary);
+  background-color: var(--colour-secondary);
+
+  pointer-events: none;
+  cursor: default;
 }
 
 .navigation-dot:focus-visible {
