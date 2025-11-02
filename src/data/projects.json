@@ -14,15 +14,15 @@
             },
             {
                 "type": "image",
-                "url": "assets/project/dev/red.avif"
+                "url": "assets/project/dev/grey.avif"
             },
             {
                 "type": "image",
-                "url": "assets/project/dev/green.avif"
+                "url": "assets/project/dev/grey.avif"
             },
             {
                 "type": "image",
-                "url": "assets/project/dev/blue.avif"
+                "url": "assets/project/dev/grey.avif"
             }
         ]
     },
@@ -38,19 +38,23 @@
         "media": [
             {
                 "type": "image",
+                "url": "assets/project/pikcells/2.avif"
+            },
+            {
+                "type": "image",
                 "url": "assets/project/dev/grey.avif"
             },
             {
                 "type": "image",
-                "url": "assets/project/dev/red.avif"
+                "url": "assets/project/pikcells/1.avif"
             },
             {
                 "type": "image",
-                "url": "assets/project/dev/green.avif"
+                "url": "assets/project/pikcells/3.avif"
             },
             {
                 "type": "image",
-                "url": "assets/project/dev/blue.avif"
+                "url": "assets/project/pikcells/4.avif"
             }
         ]
     },
