@@ -14,9 +14,9 @@ export default function ScrollProgress() {
 
   // Ring dimensions in pixels
   const ringSize = 50;
-  const ringRadius = 20;
-  const strokeWidthTrack = 2;
-  const strokeWidthCircle = 4;
+  const ringRadius = 19.8;
+
+  const strokeWidthCircle = 3;
 
   const circumference = 2 * Math.PI * ringRadius;
   const strokeDashoffset =
@@ -57,15 +57,6 @@ export default function ScrollProgress() {
         height={ringSize}
         viewBox={`0 0 ${ringSize} ${ringSize}`}
       >
-        {/* Background track */}
-        <circle
-          className={styles['progress-ring-track']}
-          r={ringRadius}
-          cx={ringSize / 2}
-          cy={ringSize / 2}
-          strokeWidth={strokeWidthTrack}
-        />
-
         {/* Progress circle */}
         <circle
           className={styles['progress-ring-circle']}

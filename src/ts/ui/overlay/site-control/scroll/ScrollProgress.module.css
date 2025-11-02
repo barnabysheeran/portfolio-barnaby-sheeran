@@ -14,15 +14,14 @@
     transform: rotate(-90deg); /* Start from top */
     width: 100%;
     height: 100%;
-}
 
-.scroll-progress .progress-ring-track {
-    stroke: var(--colour-tertiary);
-    fill: transparent;
+    z-index: 11;
 }
 
 .scroll-progress .progress-ring-circle {
     stroke: var(--colour-primary);
     stroke-linecap: round;
     fill: transparent;
+
+    z-index: 13;
 }
