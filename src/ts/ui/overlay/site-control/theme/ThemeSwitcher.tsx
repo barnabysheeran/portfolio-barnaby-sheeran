@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 import { Sun, Moon } from 'lucide-react';
 
 import { useUIStateStore } from '../../../../store/uiState/uiStateStore';
@@ -10,10 +12,23 @@ export default function ThemeSwitcher() {
 
   const { theme, setTheme } = useUIStateStore();
 
+  const refMoon = useRef<HTMLDivElement>(null);
+  const refSun = useRef<HTMLDivElement>(null);
+
   // _____________________________________________________________________ Theme
 
   const handleThemeToggle = () => {
     setTheme(theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT);
+  };
+
+  const handlePointerEnter = () => {
+    refSun.current?.classList.add(styles['hover']);
+    refMoon.current?.classList.add(styles['hover']);
+  };
+
+  const handlePointerLeave = () => {
+    refSun.current?.classList.remove(styles['hover']);
+    refMoon.current?.classList.remove(styles['hover']);
   };
 
   // ____________________________________________________________________ Render
@@ -24,25 +39,33 @@ export default function ThemeSwitcher() {
       <button
         className={styles['invisible-button']}
         onClick={handleThemeToggle}
+        onPointerEnter={handlePointerEnter}
+        onPointerLeave={handlePointerLeave}
         aria-label={`Switch to ${theme === THEMES.LIGHT ? 'Dark' : 'Light'} theme`}
       />
 
       {/* Sun */}
-      <div
-        className={`${styles['icon']} ${styles['sun-icon']} ${
-          theme === THEMES.DARK ? styles['active'] : ''
-        }`}
-      >
-        <Sun />
+      <div className={styles['icon']}>
+        <div
+          ref={refSun}
+          className={` ${styles['sun-icon']} ${
+            theme === THEMES.DARK ? styles['active'] : ''
+          }`}
+        >
+          <Sun />
+        </div>
       </div>
 
       {/* Moon */}
-      <div
-        className={`${styles['icon']} ${styles['moon-icon']} ${
-          theme === THEMES.LIGHT ? styles['active'] : ''
-        }`}
-      >
-        <Moon />
+      <div className={styles['icon']}>
+        <div
+          ref={refMoon}
+          className={` ${styles['moon-icon']} ${
+            theme === THEMES.LIGHT ? styles['active'] : ''
+          }`}
+        >
+          <Moon />
+        </div>
       </div>
 
       {/* Background Blur */}

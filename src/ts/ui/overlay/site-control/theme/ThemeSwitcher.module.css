@@ -35,33 +35,64 @@
     outline-offset: var(--outline-offset);
 }
 
-/* ____________________________________________________________________ Icons */
+/* _____________________________________________________________________ Icon */
+
 
 .icon {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: calc(var(--grid-cell-width) * 3);
+    top: calc(var(--grid-cell-height) * 3);
+
+    color: var(--colour-primary);
+
     z-index: 2;
 }
 
+/* ______________________________________________________________________ Sun */
+
 .sun-icon {
+    --sun-icon-x: -50%;
+    --sun-icon-y: -39%;
+
     opacity: 0;
-    color: var(--colour-primary);
-    transform: translate(50%, 39%);
+
+    transform: translate(var(--sun-icon-x), var(--sun-icon-y)) rotate(0deg);
+    transform-origin: calc(var(--sun-icon-x) * -1) calc(var(--sun-icon-y) * -1);
+    transition: var(--duration-slow) ease-out;
 }
 
 .sun-icon.active {
     opacity: 1;
+
+    transform: translate(var(--sun-icon-x), var(--sun-icon-y)) rotate(180deg);
 }
 
+.sun-icon.hover {
+    transform: translate(var(--sun-icon-x), var(--sun-icon-y)) rotate(-90deg);
+}
+
+/* _____________________________________________________________________ Moon */
+
 .moon-icon {
+    --moon-icon-x: -50%;
+    --moon-icon-y: -40%;
+    --moon-icon-y-offset: -42%;
+
     opacity: 0;
-    color: var(--colour-primary);
-    transform: translate(50%, 38%);
+
+    transform: translate(var(--moon-icon-x), var(--moon-icon-y)) rotate(45deg);
+    transform-origin: calc(var(--moon-icon-x) * -1) calc(var(--moon-icon-y) * -1);
+    transition: var(--duration-quick) cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .moon-icon.active {
     opacity: 1;
+
+    transform: translate(var(--moon-icon-x), var(--moon-icon-y)) rotate(0deg);
+}
+
+.moon-icon.hover {
+    transform: translate(var(--moon-icon-x), var(--moon-icon-y-offset)) rotate(-45deg);
 }
 
 /* _______________________________________________________________ Background */

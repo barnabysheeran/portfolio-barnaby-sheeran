@@ -2,33 +2,12 @@
   /* TODO Ensure Durations are matched to Framer Motion */
   --duration-slow: 0.6s;
   --duration-quick: 0.2s;
-
-  --transition-quick: var(--duration-quick);
-  --transition-slow: var(--duration-slow);
-
-  transition-property: background-color, color;
-  transition-duration: var(--transition-slow);
-  transition-timing-function: ease;
-
-
 }
+
+/* Global Background and Colour Transitions */
 
 * {
   transition-property: background-color, color, border-color, fill, stroke;
-  transition-duration: var(--transition-slow);
+  transition-duration: var(--duration-slow);
   transition-timing-function: ease;
-}
-
-/* _____________________________________________________________________ Util */
-
-.transition-quick {
-  transition-duration: var(--transition-quick) !important;
-}
-
-.transition-slow {
-  transition-duration: var(--transition-slow) !important;
-}
-
-.transition-none {
-  transition: none !important;
 }
