@@ -4,7 +4,7 @@ Vite - React - Typescript (strict) - Zustand - CSS Modules
   
 Work in Progress  
 
-Deploys to [https://barnabysheeran.com/staging](https://barnabysheeran.com/staging)   
+Deploys to [https://barnabysheeran.com](https://barnabysheeran.com)   
 
 ### _
 
