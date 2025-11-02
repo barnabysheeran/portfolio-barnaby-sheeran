@@ -76,13 +76,13 @@
 .moon-icon {
     --moon-icon-x: -50%;
     --moon-icon-y: -40%;
-    --moon-icon-y-offset: -42%;
+    --moon-icon-y-offset: -44%;
 
     opacity: 0;
 
-    transform: translate(var(--moon-icon-x), var(--moon-icon-y)) rotate(45deg);
+    transform: translate(var(--moon-icon-x), var(--moon-icon-y)) rotate(0deg);
     transform-origin: calc(var(--moon-icon-x) * -1) calc(var(--moon-icon-y) * -1);
-    transition: var(--duration-quick) cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: var(--duration-slow) cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .moon-icon.active {
