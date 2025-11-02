@@ -88,19 +88,19 @@
         "media": [
             {
                 "type": "image",
-                "url": "assets/project/dev/grey.avif"
+                "url": "assets/project/lies/1.avif"
             },
             {
                 "type": "image",
-                "url": "assets/project/dev/red.avif"
+                "url": "assets/project/lies/2.avif"
             },
             {
                 "type": "image",
-                "url": "assets/project/dev/green.avif"
+                "url": "assets/project/lies/3.avif"
             },
             {
                 "type": "image",
-                "url": "assets/project/dev/blue.avif"
+                "url": "assets/project/dev/4.avif"
             }
         ]
     }
