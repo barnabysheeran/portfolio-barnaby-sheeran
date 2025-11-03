@@ -8,13 +8,11 @@ import styles from './MediaItemImage.module.css';
 interface MediaItemImageProps {
   media: MediaItemData;
   isActive: boolean;
-  onClick?: () => void;
 }
 
 export default function MediaItemImage({
   media,
   isActive,
-  onClick,
 }: MediaItemImageProps) {
   const [loaded, setLoaded] = useState(false);
 
@@ -31,7 +29,7 @@ export default function MediaItemImage({
         src={media.url}
         alt=""
         onLoad={() => setLoaded(true)}
-        onClick={onClick}
+        draggable={false}
       />
     </motion.div>
   );
