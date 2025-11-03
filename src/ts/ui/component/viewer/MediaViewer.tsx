@@ -26,12 +26,10 @@ export default function MediaViewer({ media }: MediaViewerProps) {
   const handleNavigate = (index: number) => setCurrentIndex(index);
 
   const handleNavigateNext = () => {
-    console.log('handleNavigateNext');
     setCurrentIndex((prev) => (prev + 1) % media.length);
   };
 
   const handleNavigatePrev = () => {
-    console.log('handleNavigatePrev');
     setCurrentIndex((prev) => (prev - 1 + media.length) % media.length);
   };
 
