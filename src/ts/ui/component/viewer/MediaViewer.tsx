@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+
+import { motion } from 'framer-motion';
+import type { PanInfo } from 'framer-motion';
 
 import type { MediaItemData } from '../../../types';
 
@@ -21,16 +24,49 @@ export default function MediaViewer({ media }: MediaViewerProps) {
   const handleNavigate = (index: number) => setCurrentIndex(index);
 
   const handleNavigateNext = () => {
+    console.log('handleNavigateNext');
     setCurrentIndex((prev) => (prev + 1) % media.length);
+  };
+
+  const handleNavigatePrev = () => {
+    console.log('handleNavigatePrev');
+    setCurrentIndex((prev) => (prev - 1 + media.length) % media.length);
+  };
+
+  // _____________________________________________________________ Swipe Support
+
+  const handlePanEnd = (
+    _: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo,
+  ) => {
+    console.log('handlePanEnd', info.offset.x);
+
+    const threshold = 50;
+
+    if (info.offset.x < -threshold) {
+      handleNavigatePrev();
+    } else if (info.offset.x > threshold) {
+      handleNavigateNext();
+    }
+  };
+
+  const handleMouseDown = () => {
+    if (swipeRef.current) {
+      swipeRef.current = false;
+      return;
+    }
+
+    handleNavigateNext();
   };
 
   // ____________________________________________________________________ Render
 
   return (
     <>
-      <div
+      <motion.div
         className={styles['media-viewer']}
         style={{ position: 'relative', overflow: 'hidden' }}
+        onPanEnd={handlePanEnd}
       >
         {/* Media Items */}
         {media.map((item, idx) => (
@@ -38,11 +74,9 @@ export default function MediaViewer({ media }: MediaViewerProps) {
             key={idx}
             media={item}
             isActive={idx === currentIndex}
-            onClick={handleNavigateNext}
           />
         ))}
-      </div>
-
+      </motion.div>
       {/* Navigation */}
       {media.length > 1 && (
         <MediaNavigation
