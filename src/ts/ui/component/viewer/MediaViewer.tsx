@@ -19,6 +19,8 @@ export default function MediaViewer({ media }: MediaViewerProps) {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const isPanning = useRef(false);
+
   // ________________________________________________________________ Navigation
 
   const handleNavigate = (index: number) => setCurrentIndex(index);
@@ -33,30 +35,54 @@ export default function MediaViewer({ media }: MediaViewerProps) {
     setCurrentIndex((prev) => (prev - 1 + media.length) % media.length);
   };
 
-  // _____________________________________________________________ Swipe Support
+  // ________________________________________________________________ Pan Events
+
+  const handlePanStart = () => {
+    // Panning
+    isPanning.current = true;
+  };
 
   const handlePanEnd = (
     _: MouseEvent | TouchEvent | PointerEvent,
     info: PanInfo,
   ) => {
-    console.log('handlePanEnd', info.offset.x);
+    // Not Panning
+    isPanning.current = false;
 
+    // TODO Hard-Coded Pan Theshold
     const threshold = 50;
 
+    // Swiped left or Right beyond Threshold ?
     if (info.offset.x < -threshold) {
+      // Swiped Previous
       handleNavigatePrev();
-    } else if (info.offset.x > threshold) {
-      handleNavigateNext();
-    }
-  };
 
-  const handleMouseDown = () => {
-    if (swipeRef.current) {
-      swipeRef.current = false;
+      return;
+    } else if (info.offset.x > threshold) {
+      // Swiped Next
+      handleNavigateNext();
+
       return;
     }
 
+    // Treat as Click if not Swiped
     handleNavigateNext();
+  };
+
+  // ______________________________________________________________ Mouse Events
+
+  const handleMouseDown = () => {
+    // Not Panning
+    isPanning.current = false;
+  };
+
+  // Mouse Up is triggered before handlePanEnd,
+  const handleMouseUp = () => {
+    // Click if not Panning
+    if (isPanning.current === false) {
+      // Reset Panning State
+      handleNavigateNext();
+    }
   };
 
   // ____________________________________________________________________ Render
@@ -66,7 +92,10 @@ export default function MediaViewer({ media }: MediaViewerProps) {
       <motion.div
         className={styles['media-viewer']}
         style={{ position: 'relative', overflow: 'hidden' }}
+        onPanStart={handlePanStart}
         onPanEnd={handlePanEnd}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
       >
         {/* Media Items */}
         {media.map((item, idx) => (
@@ -77,6 +106,7 @@ export default function MediaViewer({ media }: MediaViewerProps) {
           />
         ))}
       </motion.div>
+
       {/* Navigation */}
       {media.length > 1 && (
         <MediaNavigation
