@@ -52,13 +52,13 @@ export default function MediaViewer({ media }: MediaViewerProps) {
 
     // Swiped left or Right beyond Threshold ?
     if (info.offset.x < -threshold) {
-      // Swiped Previous
-      handleNavigatePrev();
+      // Swiped Next
+      handleNavigateNext();
 
       return;
     } else if (info.offset.x > threshold) {
-      // Swiped Next
-      handleNavigateNext();
+      // Swiped Previous
+      handleNavigatePrev();
 
       return;
     }
