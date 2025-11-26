@@ -29,11 +29,11 @@ export default function TextProjectTitle({ text }: TextProjectTitleProps) {
   return (
     <div className={styles['text-project-title']}>
       {/* Static Secondary Text */}
-      <div
+      {/* <div
         className={`${styles['text-block']} ${styles['secondary']} font-body-heading`}
       >
         {text}
-      </div>
+      </div> */}
 
       {/* Animated Primary Text */}
       <motion.div

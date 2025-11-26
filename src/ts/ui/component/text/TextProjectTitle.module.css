@@ -8,13 +8,13 @@
   line-height: calc(var(--grid-cell-height) * 4.0);
 }
 
-.secondary {
+/* .secondary {
   position: relative;
   color: var(--colour-secondary);
-}
+} */
 
 .primary {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   color: var(--colour-primary);
