@@ -5,14 +5,18 @@ interface TextProjectTitleProps {
 }
 
 export default function TextProjectTitle({ text }: TextProjectTitleProps) {
+  // ____________________________________________________________________ Render
+
   return (
     <>
       <div className={`${styles['text-project-title']} font-body-heading`}>
         {text}
       </div>
-      <div className={`${styles['text-project-title']} font-body-heading`}>
+
+      {/* TODO: Duplicate for styling purposes */}
+      {/* <div className={`${styles['text-project-title']} font-body-heading`}>
         {text}
-      </div>
+      </div> */}
     </>
   );
 }
