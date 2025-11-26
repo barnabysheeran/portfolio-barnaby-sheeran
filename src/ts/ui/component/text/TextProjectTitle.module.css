@@ -1,0 +1,6 @@
+.text-project-title {
+  margin: 0;
+  color: var(--colour-primary);
+
+  line-height: calc(var(--grid-cell-height) * 4.0);
+}
