@@ -1,0 +1,21 @@
+.text-project-title {
+  position: relative;
+
+  margin: 0;
+}
+
+.text-block {
+  line-height: calc(var(--grid-cell-height) * 4.0);
+}
+
+.secondary {
+  position: relative;
+  color: var(--colour-secondary);
+}
+
+.primary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--colour-primary);
+}

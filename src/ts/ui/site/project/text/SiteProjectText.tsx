@@ -1,6 +1,7 @@
 import type { ProjectData } from '../../../../types';
 
 import styles from './SiteProjectText.module.css';
+import TextProjectTitle from '../../../component/text/TextProjectTitle';
 import ButtonText from '../../../component/button/text/ButtonText';
 
 interface SiteProjectTextProps {
@@ -15,9 +16,7 @@ export default function SiteProjectText({ projectData }: SiteProjectTextProps) {
       {/* Title Row- Optional */}
       {projectData.title && (
         <div className={styles['row-title']}>
-          <p className={`${styles['title']} font-body-heading`}>
-            {projectData.title}
-          </p>
+          <TextProjectTitle text={projectData.title} />
         </div>
       )}
 
